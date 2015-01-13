@@ -41,6 +41,9 @@ TARGET_CPU_CORTEX_A53 := true
 TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_USES_64_BIT_BINDER := true
 
+# Assertions
+TARGET_BOARD_INFO_FILE ?= device/htc/hima-common/board-info.txt
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8994
 TARGET_NO_BOOTLOADER := true
@@ -195,3 +198,7 @@ BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
 
 # inherit from the proprietary version
 -include vendor/htc/hima-common/BoardConfigVendor.mk
+
+# Releasetools
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
+TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
