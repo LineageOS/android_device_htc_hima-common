@@ -236,6 +236,7 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libOmxVidcCommon \
     libstagefrighthw \
+    libstagefright_soft_flacdec \
     qcmediaplayer
 
 PRODUCT_BOOT_JARS += \
