@@ -165,6 +165,9 @@ BOARD_USES_QCOM_HARDWARE := true
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# USB
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/soc.0/f9200000.ssusb/f9200000.dwc3/gadget/lun%d/file
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
