@@ -565,6 +565,10 @@ case "$target" in
 		do
 			 echo "bw_hwmon" > $devfreq_gov
 		done
+		for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
+		do
+			echo "cpufreq" > $devfreq_gov
+		done
 
 		# disable thermal core_control to update interactive gov settings
                 echo 0 > /sys/module/msm_thermal/core_control/enabled
