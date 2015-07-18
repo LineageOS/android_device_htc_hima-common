@@ -843,6 +843,10 @@ case "$target" in
         do
             echo "bw_hwmon" > $devfreq_gov
         done
+        for devfreq_gov in /sys/class/devfreq/qcom,mincpubw*/governor
+        do
+            echo "cpufreq" > $devfreq_gov
+        done
 
         #memory config
         setprop  sys.sysctl.extra_free_kbytes 58500
