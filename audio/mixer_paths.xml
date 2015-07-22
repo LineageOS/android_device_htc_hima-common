@@ -1483,12 +1483,38 @@
         <ctl name="SLIM_0_TX Channels" value="Two" />
     </path>
 
+    <!-- microphones in the top grille and bottom grille -->
+    <path name="dual-mic-front">
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
+        <ctl name="SLIM TX7 MUX" value="DEC3" />
+        <ctl name="SLIM TX8 MUX" value="DEC6" />
+        <ctl name="DEC3 MUX" value="ADC4" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="MIC_BIAS4_Bypass Cap" value="0" />
+        <ctl name="MIC_BIAS1_Bypass Cap" value="0" />
+        <ctl name="SLIM_0_TX Channels" value="Two" />
+    </path>
+
+    <!-- microphones in the bottom grille and top grille -->
+    <path name="dual-mic-front-inverse">
+        <ctl name="AIF1_CAP Mixer SLIM TX7" value="1"/>
+        <ctl name="AIF1_CAP Mixer SLIM TX8" value="1"/>
+        <ctl name="SLIM TX7 MUX" value="DEC6" />
+        <ctl name="SLIM TX8 MUX" value="DEC3" />
+        <ctl name="DEC3 MUX" value="ADC4" />
+        <ctl name="DEC6 MUX" value="ADC1" />
+        <ctl name="MIC_BIAS4_Bypass Cap" value="0" />
+        <ctl name="MIC_BIAS1_Bypass Cap" value="0" />
+        <ctl name="SLIM_0_TX Channels" value="Two" />
+    </path>
+
     <path name="secondmic">
         <path name="2nd-mic" />
         <ctl name="ADC3 Volume" value="19" />
         <ctl name="DEC4 Volume" value="84" />
     </path>
-    
+
     <path name="thirdmic">
         <path name="3rd-mic" />
         <ctl name="ADC4 Volume" value="19" />
@@ -1564,7 +1590,7 @@
     <path name="voice-dmic-ef">
         <path name="dmic-endfire" />
     </path>
-    
+
     <path name="dmic-hac-endfire-sidetone">
         <path name="dual-mic" />
         <ctl name="ADC1 Volume" value="12" />
@@ -1573,7 +1599,7 @@
         <ctl name="DEC4 Volume" value="84" />
         <ctl name="IIR1 INP1 MUX" value="DEC6" />
     </path>
-    
+
     <path name="dmic-hac-endfire">
         <path name="dual-mic" />
         <ctl name="ADC1 Volume" value="12" />
@@ -2058,7 +2084,7 @@
     </path>
 
     <path name="speaker-mic">
-        <path name="speaker-dmic-endfire" />
+        <path name="dmic3" />
     </path>
 
     <path name="speaker-mic-liquid">
@@ -2322,6 +2348,14 @@
 
     <path name="camcorder-mic">
         <path name="handset-mic" />
+    </path>
+
+    <path name="camcorder-stereo-dmic">
+        <path name="line-landscapecam" />
+    </path>
+
+    <path name="camcorder-stereo-dmic-reverse">
+        <path name="line-invertlandscapecam" />
     </path>
 
     <path name="hdmi-tx">
