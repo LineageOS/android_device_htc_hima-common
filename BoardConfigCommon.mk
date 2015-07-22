@@ -192,3 +192,5 @@ BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
 # Releasetools
 #TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
 #TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
+
+SKIP_BOOT_JARS_CHECK := true
