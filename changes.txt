@@ -1,4 +1,0 @@
-revert system/core 4ec3924dc9502be092a11f40535c92ada335d88a (https://github.com/CyanogenMod/android_system_core/commit/4ec3924dc9502be092a11f40535c92ada335d88a)
-revert system/core d89b1977189ce55f297d059b2e3dc2433f303067 (https://github.com/CyanogenMod/android_system_core/commit/d89b1977189ce55f297d059b2e3dc2433f303067)
-repopick -t erratum-835769 (fixes for cortex-a53)
-cherypick http://review.cyanogenmod.org/#/c/94188/
