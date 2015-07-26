@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8994 \
     liboverlay
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    keystore.msm8994
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck \
