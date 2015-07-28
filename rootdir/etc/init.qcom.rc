@@ -248,6 +248,7 @@ on early-boot
     setrlimit 8 67108864 67108864
 
     write /sys/kernel/boot_adsp/boot 1
+    exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
 
 on boot
     start rmt_storage
