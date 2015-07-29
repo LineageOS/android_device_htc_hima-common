@@ -22,6 +22,18 @@ include $(call all-makefiles-under,$(LOCAL_PATH))
 
 include $(CLEAR_VARS)
 
+WCD9320_IMAGES := \
+    wcd9320_anc.bin wcd9320_mad_audio.bin wcd9320_mbhc.bin
+
+WCD9320_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/wcd9320/,$(WCD9320_IMAGES))
+$(WCD9320_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "wcd9320 firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	tf=$(notdir $@); if [ "$$tf" = "wcd9320_mbhc.bin" ]; then tf="mbhc.bin"; fi; ln -sf /data/misc/audio/$$tf $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(WCD9320_SYMLINKS)
+
 MODEM_IMAGES := \
     mba.b00 mba.mdt modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
     modem.b06 modem.b07 modem.b08 modem.b09 modem.b10 modem.b11 modem.b12 modem.b13 \
