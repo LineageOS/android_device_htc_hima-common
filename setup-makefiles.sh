@@ -68,6 +68,8 @@ done
 
 # Pick up overlay for features that depend on non-open-source files
 PRODUCT_PACKAGES += \\
+    HTC_CIR \\
+    EasyAccessService \\
     TimeService \\
     libTimeService \\
     libtime_genoff \\
@@ -116,23 +118,23 @@ LOCAL_PATH := \$(call my-dir)
 ifneq (\$(filter hima himaul himawl himawhl,\$(TARGET_DEVICE)),)
 
 include \$(CLEAR_VARS)
-LOCAL_MODULE        := com.qualcomm.location
+LOCAL_MODULE        := HTC_CIR
 LOCAL_MODULE_CLASS  := APPS
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_OWNER  := htc
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_TAGS   := optional
 LOCAL_CERTIFICATE   := platform
-LOCAL_SRC_FILES     := proprietary/app/com.qualcomm.location/com.qualcomm.location.apk
+LOCAL_SRC_FILES     := proprietary/priv-app/HTC_CIR/HTC_CIR.apk
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
-LOCAL_MODULE        := com.qualcomm.services.location
+LOCAL_MODULE        := EasyAccessService
 LOCAL_MODULE_CLASS  := APPS
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
+LOCAL_MODULE_OWNER  := htc
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_TAGS   := optional
 LOCAL_CERTIFICATE   := platform
-LOCAL_SRC_FILES     := proprietary/app/com.qualcomm.services.location/com.qualcomm.services.location.apk
+LOCAL_SRC_FILES     := proprietary/priv-app/EasyAccessService/EasyAccessService.apk
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
@@ -143,46 +145,6 @@ LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
 LOCAL_MODULE_TAGS   := optional
 LOCAL_CERTIFICATE   := platform
 LOCAL_SRC_FILES     := proprietary/app/TimeService/TimeService.apk
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE        := qcrilmsgtunnel
-LOCAL_MODULE_CLASS  := APPS
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_TAGS   := optional
-LOCAL_CERTIFICATE   := platform
-LOCAL_SRC_FILES     := proprietary/app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE        := shutdownlistener
-LOCAL_MODULE_CLASS  := APPS
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_TAGS   := optional
-LOCAL_CERTIFICATE   := platform
-LOCAL_SRC_FILES     := proprietary/app/shutdownlistener/shutdownlistener.apk
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE        := qcnvitems
-LOCAL_MODULE_CLASS  := JAVA_LIBRARIES
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_JAVA_PACKAGE_SUFFIX)
-LOCAL_MODULE_TAGS   := optional
-LOCAL_CERTIFICATE   := PRESIGNED
-LOCAL_SRC_FILES     := proprietary/framework/qcnvitems.jar
-include \$(BUILD_PREBUILT)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE        := qcrilhook
-LOCAL_MODULE_CLASS  := JAVA_LIBRARIES
-LOCAL_MODULE_OWNER  := qcom
-LOCAL_MODULE_SUFFIX := \$(COMMON_JAVA_PACKAGE_SUFFIX)
-LOCAL_MODULE_TAGS   := optional
-LOCAL_CERTIFICATE   := PRESIGNED
-LOCAL_SRC_FILES     := proprietary/framework/qcrilhook.jar
 include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
