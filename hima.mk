@@ -143,6 +143,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8994 \
     liboverlay
 
+# max1187x touchscreen support
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/idc/max1187x_touchscreen_0.idc:system/usr/idc/max1187x_touchscreen_0.idc
+
 # Keymaster
 PRODUCT_PACKAGES += \
     keystore.msm8994
