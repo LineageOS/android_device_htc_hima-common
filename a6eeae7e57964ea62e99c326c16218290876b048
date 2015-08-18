@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f201791_fedb757a",
+        "filename": "hima.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6334
+      },
+      "writtenOn": "2015-08-18T21:14:56Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "a6eeae7e57964ea62e99c326c16218290876b048",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
