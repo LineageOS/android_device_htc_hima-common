@@ -126,8 +126,8 @@ PRODUCT_PACKAGES += \
     ethertypes
 
 # Camera
-#PRODUCT_PACKAGES += \
-#    camera.msm8994
+PRODUCT_PACKAGES += \
+    camera.msm8994
 
 # Display
 PRODUCT_PACKAGES += \
