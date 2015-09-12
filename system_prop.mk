@@ -19,7 +19,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.smoothstreaming=true \
     mm.enable.qcom_parser=3314291 \
-    audio.offload.buffer.size.kb=1024 \
+    audio.offload.buffer.size.kb=64 \
     av.offload.enable=true \
     av.streaming.offload.enable=true \
     use.voice.path.for.pcm.voip=true \
@@ -81,6 +81,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     ro.qualcomm.cabl=0 \
     ro.vendor.extension_library=libqti-perfd-client.so
+    ro.vendor.at_library=libqti-at.so \
+    ro.vendor.gt_library=libqti-gt.so \
+    sys.games.gt.prof=1
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
