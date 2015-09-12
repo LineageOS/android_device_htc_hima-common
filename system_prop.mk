@@ -4,7 +4,7 @@
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.buffer.size.kb=1024 \
+    audio.offload.buffer.size.kb=64 \
     audio.offload.gapless.enabled=true \
     audio.offload.multiple.enabled=true \
     audio.offload.pcm.16bit.enable=false \
