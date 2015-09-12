@@ -4,7 +4,7 @@
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.buffer.size.kb=1024 \
+    audio.offload.buffer.size.kb=64 \
     audio.offload.gapless.enabled=true \
     audio.offload.multiple.enabled=true \
     audio.offload.pcm.16bit.enable=false \
@@ -78,7 +78,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so
+    ro.vendor.extension_library=libqti-perfd-client.so \
+    ro.vendor.at_library=libqti-at.so \
+    ro.vendor.gt_library=libqti-gt.so \
+    sys.games.gt.prof=1
 
 # Radio
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
