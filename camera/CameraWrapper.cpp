@@ -33,11 +33,16 @@
 #include <hardware/camera.h>
 #include <camera/Camera.h>
 #include <camera/CameraParameters.h>
+#include <dlfcn.h>
+#include <math.h>
 
-static android::Mutex gCameraWrapperLock;
+#define BACK_CAMERA_ID 0
+#define FRONT_CAMERA_ID 1
+
+using namespace android;
+
+static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
-
-static char **fixed_set_params = NULL;
 
 static int camera_device_open(const hw_module_t *module, const char *name,
         hw_device_t **device);
@@ -81,6 +86,10 @@ typedef struct wrapper_camera_device {
 
 #define CAMERA_ID(device) (((wrapper_camera_device_t *)(device))->id)
 
+static char *camera_get_parameters(struct camera_device *device);
+static int camera_set_parameters(struct camera_device *device,
+        const char *params);
+
 static int check_vendor_module()
 {
     int rv = 0;
@@ -91,104 +100,10 @@ static int check_vendor_module()
 
     rv = hw_get_module_by_class("camera", "vendor",
             (const hw_module_t**)&gVendorModule);
-    if (rv)
-        ALOGE("failed to open vendor camera module");
+    if (rv) {
+        ALOGE("failed to open vendor camera module %d", rv);
+    }
     return rv;
-}
-
-static char *camera_fixup_getparams(int id, const char *settings)
-{
-    int rotation = 0;
-
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    if (params.get(android::CameraParameters::KEY_ROTATION)) {
-        rotation = atoi(params.get(android::CameraParameters::KEY_ROTATION));
-    }
-
-    /* Disable face detection */
-    params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "off");
-    params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "off");
-
-    params.set("preview-frame-rate-mode", "frame-rate-fixed");
-
-    /* Fix rotation missmatch */
-    switch (rotation) {
-        case 90:
-            params.set(android::CameraParameters::KEY_ROTATION, "0");
-            break;
-        case 180:
-            params.set(android::CameraParameters::KEY_ROTATION, "90");
-            break;
-        case 270:
-            params.set(android::CameraParameters::KEY_ROTATION, "180");
-            break;
-        default:
-            break;
-    }
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    android::String8 strParams = params.flatten();
-    char *ret = strdup(strParams.string());
-
-    return ret;
-}
-
-static char *camera_fixup_setparams(int id, const char *settings)
-{
-    bool isVideo = false;
-
-    android::CameraParameters params;
-    params.unflatten(android::String8(settings));
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: original parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    if (params.get(android::CameraParameters::KEY_RECORDING_HINT)) {
-        isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
-    }
-
-    /* Disable face detection */
-    params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "off");
-    params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "off");
-
-    /* Enable fixed fps mode */
-    params.set("preview-frame-rate-mode", "frame-rate-fixed");
-
-    if (!isVideo && id == 0) {
-        /* Set continuous burst to prevent crash */
-        params.set(android::CameraParameters_EXT::KEY_CONTIBURST_TAKE, "unlimited");
-    }
-
-    if (isVideo && id == 1) {
-        /* Front camera only supports infinity */
-        params.set(android::CameraParameters::KEY_FOCUS_MODE, "infinity");
-    }
-
-#ifdef LOG_PARAMETERS
-    ALOGV("%s: fixed parameters:", __FUNCTION__);
-    params.dump();
-#endif
-
-    android::String8 strParams = params.flatten();
-    if (fixed_set_params[id])
-        free(fixed_set_params[id]);
-    fixed_set_params[id] = strdup(strParams.string());
-    char *ret = fixed_set_params[id];
-
-    return ret;
 }
 
 /*******************************************************************
@@ -305,6 +220,13 @@ static int camera_store_meta_data_in_buffers(struct camera_device *device,
     return VENDOR_CALL(device, store_meta_data_in_buffers, enable);
 }
 
+static bool is4k(CameraParameters &params) {
+    int video_width, video_height;
+    params.getVideoSize(&video_width, &video_height);
+
+    return video_width*video_height > 1920*1080;
+}
+
 static int camera_start_recording(struct camera_device *device)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
@@ -404,11 +326,7 @@ static int camera_set_parameters(struct camera_device *device,
     if (!device)
         return -EINVAL;
 
-    char *tmp = NULL;
-    tmp = camera_fixup_setparams(CAMERA_ID(device), params);
-
-    int ret = VENDOR_CALL(device, set_parameters, tmp);
-    return ret;
+    return VENDOR_CALL(device, set_parameters, params);
 }
 
 static char *camera_get_parameters(struct camera_device *device)
@@ -419,13 +337,28 @@ static char *camera_get_parameters(struct camera_device *device)
     if (!device)
         return NULL;
 
-    char *params = VENDOR_CALL(device, get_parameters);
+    char *parameters = VENDOR_CALL(device, get_parameters); 
+    wrapper_camera_device_t *wrapper = (wrapper_camera_device_t *)device;
 
-    char *tmp = camera_fixup_getparams(CAMERA_ID(device), params);
-    VENDOR_CALL(device, put_parameters, params);
-    params = tmp;
+    CameraParameters params;
+    params.unflatten(String8(parameters));
+    ALOGV("%s: original parameters:", __FUNCTION__);
+    params.dump();
+    bool isVideo = false;
+    if (params.get(CameraParameters::KEY_RECORDING_HINT)) {
+        isVideo = !strcmp(params.get(CameraParameters::KEY_RECORDING_HINT), "true");
+    }
+    /* Disable face detection */
+    params.set(CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "off");
+    params.set(CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "off");
+    /* Enable fixed fps mode */
+    params.set("preview-frame-rate-mode", "frame-rate-fixed");
+    if (isVideo && CAMERA_ID(device) == FRONT_CAMERA_ID) {
+		/* Front camera only supports infinity */
+		params.set(CameraParameters::KEY_FOCUS_MODE, "infinity");
+	}
 
-    return params;
+    return strdup(params.flatten().string());
 }
 
 static void camera_put_parameters(struct camera_device *device, char *params)
@@ -433,8 +366,9 @@ static void camera_put_parameters(struct camera_device *device, char *params)
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
-    if (params)
-        free(params);
+    if (device) {
+        VENDOR_CALL(device, put_parameters, params);
+    }
 }
 
 static int camera_send_command(struct camera_device *device,
@@ -480,16 +414,11 @@ static int camera_device_close(hw_device_t *device)
 
     ALOGV("%s", __FUNCTION__);
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     if (!device) {
         ret = -EINVAL;
         goto done;
-    }
-
-    for (int i = 0; i < camera_get_number_of_cameras(); i++) {
-        if (fixed_set_params[i])
-            free(fixed_set_params[i]);
     }
 
     wrapper_dev = (wrapper_camera_device_t*) device;
@@ -524,7 +453,7 @@ static int camera_device_open(const hw_module_t *module, const char *name,
     wrapper_camera_device_t *camera_device = NULL;
     camera_device_ops_t *camera_ops = NULL;
 
-    android::Mutex::Autolock lock(gCameraWrapperLock);
+    Mutex::Autolock lock(gCameraWrapperLock);
 
     ALOGV("%s", __FUNCTION__);
 
@@ -534,14 +463,6 @@ static int camera_device_open(const hw_module_t *module, const char *name,
 
         cameraid = atoi(name);
         num_cameras = gVendorModule->get_number_of_cameras();
-
-        fixed_set_params = (char **) malloc(sizeof(char *) * num_cameras);
-        if (!fixed_set_params) {
-            ALOGE("parameter memory allocation fail");
-            rv = -ENOMEM;
-            goto fail;
-        }
-        memset(fixed_set_params, 0, sizeof(char *) * num_cameras);
 
         if (cameraid > num_cameras) {
             ALOGE("camera service provided cameraid out of bounds, "
@@ -580,7 +501,7 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         memset(camera_ops, 0, sizeof(*camera_ops));
 
         camera_device->base.common.tag = HARDWARE_DEVICE_TAG;
-        camera_device->base.common.version = CAMERA_DEVICE_API_VERSION_1_0;
+        camera_device->base.common.version = HARDWARE_DEVICE_API_VERSION(1, 0);
         camera_device->base.common.module = (hw_module_t *)(module);
         camera_device->base.common.close = camera_device_close;
         camera_device->base.ops = camera_ops;
@@ -590,22 +511,28 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         camera_ops->enable_msg_type = camera_enable_msg_type;
         camera_ops->disable_msg_type = camera_disable_msg_type;
         camera_ops->msg_type_enabled = camera_msg_type_enabled;
+
         camera_ops->start_preview = camera_start_preview;
         camera_ops->stop_preview = camera_stop_preview;
         camera_ops->preview_enabled = camera_preview_enabled;
         camera_ops->store_meta_data_in_buffers = camera_store_meta_data_in_buffers;
+
         camera_ops->start_recording = camera_start_recording;
         camera_ops->stop_recording = camera_stop_recording;
         camera_ops->recording_enabled = camera_recording_enabled;
         camera_ops->release_recording_frame = camera_release_recording_frame;
+
         camera_ops->auto_focus = camera_auto_focus;
         camera_ops->cancel_auto_focus = camera_cancel_auto_focus;
+
         camera_ops->take_picture = camera_take_picture;
         camera_ops->cancel_picture = camera_cancel_picture;
+
         camera_ops->set_parameters = camera_set_parameters;
         camera_ops->get_parameters = camera_get_parameters;
         camera_ops->put_parameters = camera_put_parameters;
         camera_ops->send_command = camera_send_command;
+
         camera_ops->release = camera_release;
         camera_ops->dump = camera_dump;
 
