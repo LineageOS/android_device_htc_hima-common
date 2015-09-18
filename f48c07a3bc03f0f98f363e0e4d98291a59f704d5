@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff346bd7_bb905b97",
+        "filename": "camera/CameraWrapper.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7148
+      },
+      "writtenOn": "2015-09-18T00:59:36Z",
+      "side": 0,
+      "message": "it\u0027s still just a  wrapper",
+      "range": {
+        "startLine": 57,
+        "startChar": 35,
+        "endLine": 57,
+        "endChar": 45
+      },
+      "revId": "f48c07a3bc03f0f98f363e0e4d98291a59f704d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
