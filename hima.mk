@@ -215,3 +215,8 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
+
+# Dot View Case
+PRODUCT_PACKAGES += \
+   Dotcase
+
