@@ -241,8 +241,8 @@ PRODUCT_BOOT_JARS += \
     qcmediaplayer
 
 # Power
-PRODUCT_PACKAGES += \
-    power.msm8994
+#PRODUCT_PACKAGES += \
+#    power.msm8994
 
 # USB
 PRODUCT_PACKAGES += \
