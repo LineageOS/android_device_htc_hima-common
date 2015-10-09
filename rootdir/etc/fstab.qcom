@@ -16,9 +16,9 @@
 /dev/block/bootdevice/by-name/persist                 /persist          ext4    nosuid,nodev,barrier=1                                                                                          wait
 /dev/block/bootdevice/by-name/apppreload              /preload          ext4    nosuid,nodev,noatime,barrier=1,grpid                                                                            wait
 
-/dev/block/bootdevice/by-name/radio                   /firmware/radio   vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0                    wait
-/dev/block/bootdevice/by-name/adsp                    /firmware/adsp    vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0                    wait
-/dev/block/bootdevice/by-name/cpe                     /firmware/cpe     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0                    wait
+/dev/block/bootdevice/by-name/radio                   /firmware/radio   vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                                                        wait
+/dev/block/bootdevice/by-name/adsp                    /firmware/adsp    vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                                                        wait
+/dev/block/bootdevice/by-name/cpe                     /firmware/cpe     vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337                                                        wait
 /dev/block/bootdevice/by-name/carrier                 /carrier          ext4    nosuid,nodev,noatime,barrier=1,grpid                                                                            wait
 
 /dev/block/bootdevice/by-name/devlog                  /devlog           ext4    nosuid,nodev,barrier=1,errors=continue                                                                          wait
