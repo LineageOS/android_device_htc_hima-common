@@ -155,12 +155,12 @@ BOARD_PROVIDES_ADDITIONAL_BIONIC_STATIC_LIBS += libc_htc_symbols
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
-TARGET_USES_LOGD=false
+#TARGET_USES_LOGD=false
 
 # Offmode Charging
-COMMON_GLOBAL_CFLAGS += \
-    -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
-    -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
+#COMMON_GLOBAL_CFLAGS += \
+#    -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
+#    -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -172,8 +172,8 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
@@ -188,5 +188,5 @@ BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
 -include vendor/htc/hima-common/BoardConfigVendor.mk
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
+#TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
