@@ -873,6 +873,10 @@ service hrdump /system/bin/hrdump -s
     disabled
     oneshot
 
+service logcat /system/bin/logcat -f /data/logcat
+    class main
+    oneshot
+
 on property:ro.boot.htc.hrdump=detected
     setprop debug.htc.hrdump "detected"
 
