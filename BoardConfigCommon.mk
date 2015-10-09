@@ -52,7 +52,7 @@ TARGET_USES_C2D_COMPOSITION := true
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/htc/hima-common/mkbootimg.mk
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-7 androidusb.pid=0x065d androidkey.dummy=1 androidtouch.htc_event=1 disk_mode_enable=1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=31 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 boot_cpus=0-7 androidusb.pid=0x065d androidkey.dummy=1 androidtouch.htc_event=1 disk_mode_enable=1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x00078000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_RAMDISK_OFFSET := 0x02000000
@@ -135,6 +135,7 @@ TARGET_USES_ION := true
 TARGET_USES_NEW_ION_API :=true
 TARGET_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
+BOARD_USES_OPENSSL_SYMBOLS := true
 
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
@@ -155,12 +156,13 @@ BOARD_PROVIDES_ADDITIONAL_BIONIC_STATIC_LIBS += libc_htc_symbols
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
-TARGET_USES_LOGD=false
+#TARGET_USES_LOGD=false
+COMMON_GLOBAL_CFLAGS += -DHTCLOG
 
 # Offmode Charging
-COMMON_GLOBAL_CFLAGS += \
-    -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
-    -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
+#COMMON_GLOBAL_CFLAGS += \
+#    -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' \
+#    -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -173,7 +175,7 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
+#BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
@@ -188,5 +190,5 @@ BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
 -include vendor/htc/hima-common/BoardConfigVendor.mk
 
 # Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
+#TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
+#TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
