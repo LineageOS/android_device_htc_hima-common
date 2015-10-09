@@ -155,7 +155,7 @@ BOARD_PROVIDES_ADDITIONAL_BIONIC_STATIC_LIBS += libc_htc_symbols
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Logging
-TARGET_USES_LOGD=false
+#TARGET_USES_LOGD=false
 
 # Offmode Charging
 COMMON_GLOBAL_CFLAGS += \
@@ -172,8 +172,8 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+#BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
