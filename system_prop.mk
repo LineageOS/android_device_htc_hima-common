@@ -49,6 +49,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dmid=-1286820014 \
     audio.ds1.metainfo.key=273
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=2
+
 # Display
 #
 # OpenGLES:
