@@ -52,6 +52,9 @@ on early-fs
     chown system /sys/process/task_comm_list
 
 on init
+    # Preload the BoringSSL wrapper
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
+    export LD_PRELOAD "/system/lib64/libboringssl-compat.so"
 
     mkdir /firmware 0771 system system
     mkdir /firmware/image 0771 system system
