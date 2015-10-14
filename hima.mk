@@ -251,3 +251,7 @@ PRODUCT_PACKAGES += \
 # Recovery
 #PRODUCT_PACKAGES += \
 #    librecovery_updater_hima
+
+# BoringSSL compatability wrapper
+PRODUCT_PACKAGES += \
+    libboringssl-compat
