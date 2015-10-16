@@ -257,3 +257,6 @@ PRODUCT_PACKAGES += \
 # BoringSSL compatability wrapper
 PRODUCT_PACKAGES += \
     libboringssl-compat
+
+# tcmiface for tcm support
+PRODUCT_PACKAGES += tcmiface
