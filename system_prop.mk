@@ -8,8 +8,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # MTP and USB-OTG
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true
+    persist.sys.usb.config=mtp
 
 # HTC RIL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
