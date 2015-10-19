@@ -198,7 +198,6 @@ PRODUCT_PACKAGES += \
 # Init scripts
 PRODUCT_PACKAGES += \
     init.qcom.sh \
-    init.qcom.bt.sh \
     init.qcom.coex.sh \
     init.qcom.early_boot.sh \
     init.qcom.fm.sh \
