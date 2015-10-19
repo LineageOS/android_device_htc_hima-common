@@ -201,3 +201,8 @@ CameraParameters_EXT::~CameraParameters_EXT() {};
     void check_flashlight_restriction(); \
     void getBrightnessLumaTargetSet(int *magic, int *sauce) const; \
     void setBrightnessLumaTargetSet(int brightness, int luma);
+
+#define CAMERA_PARAMETERS_EXTRA_H_PRIVATE \
+    String8 lKeys [300]; \
+    String8 lValues [300]; \
+    size_t lSize;
