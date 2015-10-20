@@ -52,6 +52,8 @@ on early-fs
     chown system /sys/process/task_comm_list
 
 on init
+    # Preload HTC logging functions
+    export LD_PRELOAD "libhtc.so"
 
     mkdir /firmware 0771 system system
     mkdir /firmware/image 0771 system system
