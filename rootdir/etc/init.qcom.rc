@@ -52,8 +52,8 @@ on early-fs
     chown system /sys/process/task_comm_list
 
 on init
-    # Preload the BoringSSL wrapper
-    export LD_PRELOAD "/system/lib64/libboringssl-compat.so"
+    # Preload the BoringSSL wrapper and HTC logging functions
+    export LD_PRELOAD "/system/lib64/libboringssl-compat.so /system/lib64/libhtc.so"
 
     mkdir /firmware 0771 system system
     mkdir /firmware/image 0771 system system
