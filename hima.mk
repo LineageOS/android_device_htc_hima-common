@@ -259,3 +259,7 @@ PRODUCT_PACKAGES += \
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_hima
+
+# HTC Logging functions
+PRODUCT_PACKAGES += \
+    libhtc
