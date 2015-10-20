@@ -727,8 +727,6 @@ on post-fs
 on post-fs-data
     start hrdump
 
-    mkdir /data/media 0770 media_rw media_rw
-
     # Create directory for TZ Apps
     mkdir /data/misc/qsee 0770 system system
 
@@ -741,9 +739,6 @@ on post-fs-data
 
     # Create folder for camera sockets
     mkdir /data/misc/camera 0770 camera camera
-
-    mkdir /data/media 0770 media_rw media_rw
-    chown media_rw media_rw /data/media
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
