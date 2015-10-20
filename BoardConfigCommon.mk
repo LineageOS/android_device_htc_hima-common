@@ -148,9 +148,6 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
-# Libc extensions
-BOARD_PROVIDES_ADDITIONAL_BIONIC_STATIC_LIBS += libc_htc_symbols
-
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
