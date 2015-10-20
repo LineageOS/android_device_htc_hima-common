@@ -262,3 +262,7 @@ PRODUCT_PACKAGES += \
 # Build libstlport for legacy blobs
 PRODUCT_PACKAGES += \
     libstlport
+
+# HTC Logging functions
+PRODUCT_PACKAGES += \
+    libhtc
