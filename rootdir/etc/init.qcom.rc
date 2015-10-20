@@ -56,6 +56,9 @@ on init
     export LD_PRELOAD "/system/lib/libboringssl-compat.so"
     export LD_PRELOAD "/system/lib64/libboringssl-compat.so"
 
+    # Preload the HTC logging functions
+    export LD_PRELOAD "/system/lib/libhtc.so"
+
     mkdir /firmware 0771 system system
     mkdir /firmware/image 0771 system system
     mkdir /persist/data 0700 system system
