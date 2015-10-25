@@ -251,3 +251,6 @@
 /dev/rt5501                 0660        system  audio
 /dev/tfa9887                0660        system  audio
 /dev/tfa9887l               0660        system  audio
+
+# FRP
+/dev/block/bootdevice/by-name/frp       0600    system  system
