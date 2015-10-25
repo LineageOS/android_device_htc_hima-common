@@ -42,6 +42,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0 \
     ro.sf.lcd_density=480
 
+# Factory Reset Protection
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.frp.pst=/dev/block/platform/soc.0/f9824900.sdhci/by-name/frp
+
 # GPS
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=1 \
