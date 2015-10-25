@@ -337,7 +337,7 @@ static char *camera_get_parameters(struct camera_device *device)
     if (!device)
         return NULL;
 
-    char *parameters = VENDOR_CALL(device, get_parameters); 
+    char *parameters = VENDOR_CALL(device, get_parameters);
     wrapper_camera_device_t *wrapper = (wrapper_camera_device_t *)device;
 
     CameraParameters params;
