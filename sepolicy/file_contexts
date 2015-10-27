@@ -11,6 +11,6 @@
 /dev/time_helper						u:object_r:time_helper_device:s0
 
 /dev/block/mmcblk0p(.*)					u:object_r:mmc_block_device:s0
-/dev/block/bootdevice\.1/by-name/ssd	u:object_r:ssd_device:s0
+/dev/block/bootdevice/by-name/ssd		u:object_r:ssd_device:s0
 
 /sys/devices/platform/htc_battery/power_supply/battery(/.*)?	u:object_r:sysfs_battery_supply:s0
