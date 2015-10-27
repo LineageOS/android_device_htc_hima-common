@@ -13,11 +13,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # HTC RIL
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib64/libhtc_rilhook.so
+    rild.libpath=/system/lib64/libhtc_rilhook.so
 
 # QC RIL (disabled for now, using prebuilt libril)
 #PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-#	rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+#    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
