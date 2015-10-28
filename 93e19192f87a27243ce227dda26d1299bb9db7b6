@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_bacb9a1c",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-10-28T11:39:43Z",
+      "side": 0,
+      "message": "These 2 apps need to be \"built\" otherwise they complain about Sense signing crap. I think its when they\u0027re just resigned they stop complaining, but I might be wrong.",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 24
+      },
+      "revId": "93e19192f87a27243ce227dda26d1299bb9db7b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
