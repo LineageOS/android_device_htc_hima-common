@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 export VENDOR=htc
 export DEVICE=hima-common
 
@@ -54,10 +52,6 @@ fi
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $BASE/*
 
-#DEVBASE=../../../vendor/$VENDOR/$DEVICE/proprietary
-#rm -rf $DEVBASE/*
-
 extract ../../$VENDOR/$DEVICE/proprietary-files.txt $BASE
-#extract ../../$VENDOR/$DEVICE/proprietary-files.txt $DEVBASE
 
 ./setup-makefiles.sh
