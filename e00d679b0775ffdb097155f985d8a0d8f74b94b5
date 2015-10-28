@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_fa4b62ad",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-10-28T11:38:07Z",
+      "side": 1,
+      "message": "Not the original name for this either, but it changes name with every release and it was ugly, so we resorted to shamu-type naming.",
+      "range": {
+        "startLine": 88,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 29
+      },
+      "revId": "e00d679b0775ffdb097155f985d8a0d8f74b94b5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_1a4f4ebe",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 758,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-10-28T11:38:07Z",
+      "side": 1,
+      "message": "Can we leave the rest of the listening blobs? Just a personal side project.",
+      "range": {
+        "startLine": 758,
+        "startChar": 0,
+        "endLine": 758,
+        "endChar": 8
+      },
+      "revId": "e00d679b0775ffdb097155f985d8a0d8f74b94b5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
