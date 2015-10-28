@@ -85,11 +85,11 @@ vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libswdap.so
 
 # Bluetooth
-vendor/firmware/bcm4356A2.hcd
+etc/firmware/BCM4356A2_001.003.015.0064.0175.hcd
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8994.so
+lib/hw/camera.msm8994.so:lib/hw/camera.vendor.msm8994.so
 lib/libawb_calibration.so
 lib/libBeautyChat.so
 lib/libc2dcolorconvertgpu.so
@@ -749,11 +749,11 @@ bin/cir_fw_update
 etc/cir.img
 
 # Keymaster
-vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster/keymaster.mdt
+vendor/firmware/keymaster.b00:vendor/firmware/keymaster/keymaster.b00
+vendor/firmware/keymaster.b01:vendor/firmware/keymaster/keymaster.b01
+vendor/firmware/keymaster.b02:vendor/firmware/keymaster/keymaster.b02
+vendor/firmware/keymaster.b03:vendor/firmware/keymaster/keymaster.b03
+vendor/firmware/keymaster.mdt:vendor/firmware/keymaster/keymaster.mdt
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8994.so
@@ -854,7 +854,7 @@ vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib65/libsystem_health_mon.so
+vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 
 # Sensors
@@ -878,5 +878,5 @@ vendor/lib64/libTimeService.so
 vendor/lib/libTimeService.so
 
 # Wifi
-etc/firmware/fw_bcmdhd_apsta.bin
-etc/firmware/fw_bcmdhd.bin
+etc/firmware/fw_bcm4356_apsta.bin
+etc/firmware/fw_bcm4356.bin
