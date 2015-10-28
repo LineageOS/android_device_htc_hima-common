@@ -881,5 +881,6 @@ vendor/lib64/libTimeService.so
 vendor/lib/libTimeService.so
 
 # Wifi
+etc/calibration
 etc/firmware/fw_bcm4356_apsta.bin
 etc/firmware/fw_bcm4356.bin
