@@ -20,7 +20,7 @@ COMMON_PATH := device/htc/hima-common
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # Assertions
-TARGET_BOARD_INFO_FILE ?= device/htc/hima-common/board-info.txt
+TARGET_BOARD_INFO_FILE ?= $(COMMON_PATH)/board-info.txt
 
 # Architecture
 TARGET_ARCH := arm64
@@ -81,7 +81,7 @@ BOARD_SUPPORTS_SOUND_TRIGGER := false
 BOARD_USES_ALSA_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/hima-common/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := $(COMMON_PATH)/bluetooth/libbt_vndcfg.txt
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
@@ -96,7 +96,7 @@ COMMON_GLOBAL_CFLAGS += \
     -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
 
 # CM Hardware
-BOARD_HARDWARE_CLASS := device/htc/hima-common/cmhw
+BOARD_HARDWARE_CLASS := $(COMMON_PATH)/cmhw
 
 # Display
 BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
@@ -144,15 +144,15 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/htc/hima-common/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/htc/hima-common
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/htc/hima-common/sepolicy
+BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     cir_fw_update.te \
