@@ -110,7 +110,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     init.qcom.sh \
-    init.qcom.fm.sh \
     init.qcom.post_boot.sh \
     init.qcom.uicc.sh
 
