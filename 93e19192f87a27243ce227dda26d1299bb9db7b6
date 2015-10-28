@@ -22,6 +22,30 @@
       "revId": "93e19192f87a27243ce227dda26d1299bb9db7b6",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f2577a7_7aa3f250",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-10-28T11:42:11Z",
+      "side": 0,
+      "message": "I removed those two. HTC_CIR is only useful if you want to use the HTC IR implementation. HTC also provides a standard HAL, which should be used instead.\nI\u0027m yanking out EasyAccessService for now until I can figure it out.",
+      "parentUuid": "5f2577a7_bacb9a1c",
+      "range": {
+        "startLine": 71,
+        "startChar": 4,
+        "endLine": 72,
+        "endChar": 24
+      },
+      "revId": "93e19192f87a27243ce227dda26d1299bb9db7b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
