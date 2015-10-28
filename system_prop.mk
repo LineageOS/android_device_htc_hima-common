@@ -2,41 +2,20 @@
 # System Properties for HTC One M9 (hima)
 #
 
-# IO Scheduler
-PRODUCT_PROPERTY_OVERRIDES += \
-    sys.io.scheduler=bfq
-
-# MTP
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp \
-    persist.sys.isUsbOtgEnabled=true
-
-# HTC RIL
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib64/libhtc_rilhook.so
-
-# QC RIL (disabled for now, using prebuilt libril)
-#PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-#    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-
 # Audio
 PRODUCT_PROPERTY_OVERRIDES += \
-    mm.enable.smoothstreaming=true \
-    mm.enable.qcom_parser=3314291 \
     audio.offload.buffer.size.kb=1024 \
-    av.offload.enable=true \
-    av.streaming.offload.enable=true \
-    use.voice.path.for.pcm.voip=true \
-    audio.offload.multiple.enabled=true \
     audio.offload.gapless.enabled=true \
-    media.aac_51_output_enabled=true \
+    audio.offload.multiple.enabled=true \
     audio.offload.pcm.16bit.enable=false \
-    audio.offload.pcm.24bit.enable=true
+    audio.offload.pcm.24bit.enable=true \
+    av.offload.enable=true \
+    av.streaming.offload.enable=true
 
-# fluencetype can be "fluence" or "fluencepro" or "none"
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
-    ro.qc.sdk.audio.ssr=false
+    ro.qc.sdk.audio.ssr=false \
+    use.voice.path.for.pcm.voip=true
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.camcorder.stereo=true \
@@ -44,25 +23,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     persist.audio.fluence.speaker=true
 
-# System props for Dolby
 PRODUCT_PROPERTY_OVERRIDES += \
     dmid=-1286820014 \
     audio.ds1.metainfo.key=273
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=1
-
 # Display
-#
-# OpenGLES:
-# 196608 is decimal for 0x30000 to report major/minor versions as 3/0
-# 196609 is decimal for 0x30001 to report major/minor versions as 3/1
-# Set to 3.0 (even though the blobs support 3.1) to maintain compatibility
-# with third party applications that do not support 3.1
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196608 \
+    ro.qualcomm.cabl=0 \
     ro.sf.lcd_density=480
 
 # GPS
@@ -72,6 +41,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.gps.agps_provider=1 \
     ro.qc.sdk.izat.premium_enabled=0 \
     ro.qc.sdk.izat.service_mask=0x0
+
+# IO Scheduler
+PRODUCT_PROPERTY_OVERRIDES += \
+    sys.io.scheduler=bfq
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.aac_51_output_enabled=true \
+    mm.enable.qcom_parser=3314291 \
+    mm.enable.smoothstreaming=true
 
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -85,33 +64,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_2="" \
     persist.rild.nitz_short_ons_3=""
 
-# Qualcomm
+# Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    ro.qualcomm.cabl=0 \
     ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1
-#    persist.radio.add_power_save=1
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    rild.libpath=/system/lib64/libhtc_rilhook.so
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.netmgrd.qos.enable=false \
-    ro.use_data_netmgrd=true
-
-# Sensor debugging
-# Valid settings (and presumably what they mean):
-#   0      - off
-#   1      - all the things
-#   V or v - verbose
-#   D or d - debug
-#   E or e - errors
-#   W or w - warnings
-#   I or i - info
-#
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.sensors.hal=e \
-    debug.qualcomm.sns.daemon=e \
-    debug.qualcomm.sns.hal=e \
-    debug.qualcomm.sns.libsensor1=e
+# USB
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    persist.sys.isUsbOtgEnabled=true \
+    persist.sys.usb.config=mtp
