@@ -27,6 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dmid=-1286820014 \
     audio.ds1.metainfo.key=273
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+   ro.bt.bdaddr_path = /sys/module/htc_bdaddress/parameters/bdaddress
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
