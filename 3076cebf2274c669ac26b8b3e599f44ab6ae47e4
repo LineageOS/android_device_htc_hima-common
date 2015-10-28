@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f2577a7_5a55d64f",
+        "filename": "system_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-10-28T11:35:18Z",
+      "side": 1,
+      "message": "Can probably kill these as well, Dolby crap is proprietary.",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 30
+      },
+      "revId": "3076cebf2274c669ac26b8b3e599f44ab6ae47e4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
