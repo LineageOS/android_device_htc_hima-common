@@ -246,3 +246,7 @@
 
 #HTC Debug
 /dev/block/bootdevice/by-name/misc      0660    root    system
+
+# Amplifiers
+/dev/tfa9887                0660        system  audio
+/dev/tfa9887l               0660        system  audio
