@@ -89,7 +89,7 @@ etc/firmware/BCM4356A2_001.003.015.0064.0175.hcd
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.msm8994.so
+lib/hw/camera.msm8994.so:lib/hw/camera.vendor.msm8994.so
 lib/libawb_calibration.so
 lib/libBeautyChat.so
 lib/libc2dcolorconvertgpu.so
