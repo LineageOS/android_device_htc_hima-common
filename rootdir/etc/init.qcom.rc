@@ -1514,10 +1514,6 @@ service energy-awareness /system/bin/energy-awareness
     group system
     oneshot
 
-service pnpmgr /system/bin/pnpmgr
-    class core
-    user root
-
 service memlock /system/bin/memlock
     class main
     user root
