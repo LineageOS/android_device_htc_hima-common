@@ -35,8 +35,8 @@ $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk
 
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-# Add WiFi Config files
-$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+# Add WiFi Firmware
+$(call inherit-product, hardware/broadcom/wlan/bcmdhd/firmware/bcm4356/device-bcm.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -212,6 +212,10 @@ PRODUCT_COPY_FILES += \
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
+
+# WiFi cal NVRAM file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 # Wifi
 PRODUCT_PACKAGES += \
