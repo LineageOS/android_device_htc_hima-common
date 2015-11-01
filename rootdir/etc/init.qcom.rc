@@ -276,8 +276,8 @@ on boot
     write /sys/bus/i2c/devices/2-0020/input/input0/update_fw 1
 
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /proc/bluetooth/sleep/proto
     chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_lpm
     chown bluetooth bluetooth /sys/module/hci_uart/parameters/ath_btwrite
@@ -287,17 +287,15 @@ on boot
     chmod 0660 /sys/module/hci_smd/parameters/hcismd_set
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /proc/bluetooth/sleep/proto
-    chown bluetooth net_bt /dev/ttyHS0
     chmod 0660 /sys/module/hci_uart/parameters/ath_lpm
     chmod 0660 /sys/module/hci_uart/parameters/ath_btwrite
-    chmod 0660 /dev/ttyHS0
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
     chmod 0660 /dev/ttyHS2
     chown bluetooth bluetooth /dev/ttyHS2
 
-    chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
+    chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
     #Create QMUX deamon socket area
