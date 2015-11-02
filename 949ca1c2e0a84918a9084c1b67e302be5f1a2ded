@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3f3283f1_40aa9e85",
+        "filename": "bluetooth/libbt_vndcfg.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-02T12:49:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3f3283f1_c0efaee7",
+      "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f3283f1_a0eca2f3",
         "filename": "configs/bcmdhd.cal",
         "patchSetId": 6
