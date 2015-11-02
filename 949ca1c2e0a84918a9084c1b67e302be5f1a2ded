@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3f3283f1_20baf2dd",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-02T12:47:04Z",
+      "side": 1,
+      "message": "Default firmware is placed in /system/vendor/firmware not /system/etc/firmare https://github.com/CyanogenMod/android_hardware_broadcom_wlan/blob/cm-12.0/bcmdhd/firmware/bcm4356/device-bcm.mk#L29",
+      "parentUuid": "3f3283f1_80bbe6e3",
+      "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f3283f1_60c0fa51",
         "filename": "BoardConfigCommon.mk",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-11-02T12:43:00Z",
       "side": 1,
       "message": "Not necessary.",
+      "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f3283f1_00cff67f",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-02T12:47:04Z",
+      "side": 1,
+      "message": "I know, sticking to AOSP style though, I\u0027ll remove it, not a big deal.",
+      "parentUuid": "3f3283f1_60c0fa51",
       "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3f3283f1_e0cbca6f",
+        "filename": "bluetooth/libbt_vndcfg.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-02T12:47:04Z",
+      "side": 1,
+      "message": "Sure.",
+      "parentUuid": "3f3283f1_c0efaee7",
+      "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f3283f1_a0eca2f3",
         "filename": "configs/bcmdhd.cal",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-11-02T12:43:00Z",
       "side": 1,
       "message": "I\u0027m shipping this as a blob.",
+      "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3f3283f1_c0c8ce75",
+        "filename": "configs/bcmdhd.cal",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-02T12:47:04Z",
+      "side": 1,
+      "message": "I know, I\u0027m wondering why though? No other BCMDHD devices are.",
+      "parentUuid": "3f3283f1_a0eca2f3",
       "revId": "949ca1c2e0a84918a9084c1b67e302be5f1a2ded",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
