@@ -73,6 +73,36 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.izat.premium_enabled=0 \
     ro.qc.sdk.izat.service_mask=0x0
 
+# WiFi calling
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.iwlan.enable=true \
+    persist.radio.ignore_ims_wlan=1 \
+    persist.radio.data_con_rprt=1
+
+# Rich Communications Service is disabled in 5.1
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.rcs.supported=0
+
+# Reduce IMS logging
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.ims.disableDebugLogs=1 \
+    persist.ims.disableADBLogs=2 \
+    persist.ims.disableDebugLogs=0 \
+    persist.ims.disableQXDMLogs=0 \
+    persist.ims.disableIMSLogs=1 \
+    persist.camera.hal.debug.mask=7 \
+    persist.camera.ISP.debug.mask=0 \
+    persist.camera.pproc.debug.mask=7 \
+    persist.camera.stats.debug.mask=0 \
+    persit.camera.imglib.logs=1 \
+    persist.camera.mct.debug.mask=1 \
+    persist.camera.sensor.debug=0 \
+    vidc.debug.level=1
+
+# Disable QC Oem Hook
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.oem_socket=false
+
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_plmn="" \
