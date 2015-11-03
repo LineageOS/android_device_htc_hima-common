@@ -2347,7 +2347,7 @@
     </path>
 
     <path name="camcorder-mic">
-        <path name="handset-mic" />
+        <path name="line-portraitcam" />
     </path>
 
     <path name="camcorder-stereo-dmic">
