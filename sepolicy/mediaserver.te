@@ -1,4 +1,0 @@
-allow mediaserver system_data_file:file { open append };
-allow mediaserver default_prop:property_service set;
-allow mediaserver system_server:unix_stream_socket { read write };
-
