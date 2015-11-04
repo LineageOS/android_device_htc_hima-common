@@ -1,7 +1,4 @@
-allow thermal-engine shell_data_file:dir { write remove_name add_name search };
-allow thermal-engine shell_data_file:file { write getattr read create unlink open };
-allow thermal-engine self:capability { chown net_admin };
-allow thermal-engine self:netlink_kobject_uevent_socket { bind create read setopt };
-allow thermal-engine self:socket write;
-allow thermal-engine socket_device:dir w_dir_perms;
-allow thermal-engine socket_device:sock_file { create setattr };
+# thermal-engine really shouldn't be using /data/local anyway
+# so it's hard to get around giving it the same grants shell has
+allow thermal-engine shell_data_file:dir create_dir_perms;
+allow thermal-engine shell_data_file:file create_file_perms;
