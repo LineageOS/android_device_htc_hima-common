@@ -157,16 +157,18 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 BOARD_SEPOLICY_UNION += \
     cir_fw_update.te \
     device.te \
-    healthd.te \
+    file.te \
     file_contexts \
-    kernel.te \
+    genfs_contexts \
+    healthd.te \
     mediaserver.te \
-    qmuxd.te \
-    system_app.te \
+    mm-qcamerad.te \
+    property.te \
+    property_contexts \
+    rmt_storage.te \
     system_server.te \
     thermal-engine.te \
-    ueventd.te \
-    vold.te
+    ueventd.te
 
 # Wifi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
