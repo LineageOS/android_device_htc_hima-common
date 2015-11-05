@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f2f7f8d_08527668",
+        "filename": "system_prop.mk",
+        "patchSetId": 5
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-11-05T02:49:38Z",
+      "side": 1,
+      "message": "Just do /dev/block/bootdevice/by-name/frp",
+      "revId": "ede69c2fdacb0bc4771c824770725f205d3b680b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
