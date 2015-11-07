@@ -1754,7 +1754,7 @@ int tfa9887_open(void)
         ALOGI("%s: Revision number: 0x%04x\n", __func__, value);
 
         /* Perform up to 3 initialization passes for calibration */
-        for (pass = 0; pass < 3; pass++) {
+        for (pass = 0; pass < 2; pass++) {
             rc = tfa9887_hw_init(amp, TFA9887_DEFAULT_RATE);
             if (rc) {
                 ALOGE("%s: Failed to initialize hardware: %d\n", __func__, rc);
@@ -1812,15 +1812,7 @@ int tfa9887_open(void)
             ALOGI("%s: Current impedance: %0.2f\n", __func__, impedance);
 
             if (impedance < 5.0f || impedance > 10.0f) {
-                if (pass < 2) {
-                    rc = tfa9887_reset_calibration(amp);
-                    if (rc) {
-                        ALOGE("%s: Failed to reset calibration: %d\n",
-                                __func__, rc);
-                        goto open_i2s_shutdown;
-                    }
-                    ALOGI("%s: Reset calibration, restart\n", __func__);
-                } else if (pass >= 2) {
+                if (pass < 1) {
                     rc = tfa9887_set_calibration_impedance(amp, 7.0f);
                     if (rc) {
                         ALOGE("%s: Failed to set calibration impedance: %d\n",
