@@ -64,6 +64,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     mm.enable.qcom_parser=3314291 \
     mm.enable.smoothstreaming=true
 
+# NFC
+PRODUCT_PROPERTY_OVERRIDES += \
+    debug.nfc.fw_download=true \
+    debug.nfc.fw_boot_download=false
+
 # NITZ
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_plmn="" \
@@ -84,7 +89,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     rild.libpath=/system/lib64/libhtc_rilhook.so
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.call_ring.multiple=false
+
 # USB
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.isUsbOtgEnabled=true \
     persist.sys.usb.config=mtp
+
+# Wifi
+PRODUCT_PROPERTY_OVERRIDES += \
+    wifi.interface=wlan0
