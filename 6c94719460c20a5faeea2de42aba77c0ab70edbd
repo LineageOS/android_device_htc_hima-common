@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1f2f7f8d_d013e3b7",
+        "filename": "rootdir/etc/ueventd.qcom.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-08T18:27:22Z",
+      "side": 1,
+      "message": "All the bluetooth stuff should be under net_bt_stack (idk why HTC is using net_bt). See my Cleanup WiFi and BT commit.",
+      "range": {
+        "startLine": 224,
+        "startChar": 44,
+        "endLine": 224,
+        "endChar": 50
+      },
+      "revId": "6c94719460c20a5faeea2de42aba77c0ab70edbd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
