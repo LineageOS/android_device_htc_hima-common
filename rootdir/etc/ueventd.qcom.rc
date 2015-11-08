@@ -173,8 +173,8 @@
 /dev/tsc_ci0              0660   media       media
 
 # tbase
-/dev/mobicore-user        0666   system    system
-/dev/mobicore             0600   system    system
+/dev/mobicore-user        0660   system    system
+/dev/mobicore             0660   system    system
 
 # sensors
 /sys/devices/i2c-12/12-*  pollrate_ms 0664 system system
@@ -220,6 +220,9 @@
 # Ramdump devices
 /dev/ramdump*             0640   system     system
 
+# Bluetooth
+/dev/ttyHS0               0660   bluetooth  net_bt
+
 # CIR
 /dev/ttyHSL2              0660   system      system
 
@@ -253,3 +256,11 @@
 
 # FRP
 /dev/block/bootdevice/by-name/frp       0600    system  system
+
+# NFC
+/dev/pn544                  0660        nfc     nfc
+
+# HTC
+/dev/iio:device0            0660        system  system
+/dev/iio:device1            0660        system  system
+/dev/radio_feedback         0660        radio   radio
