@@ -22,6 +22,30 @@
       "revId": "6c94719460c20a5faeea2de42aba77c0ab70edbd",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1f2f7f8d_af88f51e",
+        "filename": "rootdir/etc/ueventd.qcom.rc",
+        "patchSetId": 3
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-11-09T02:22:05Z",
+      "side": 1,
+      "message": "Where\u0027s your reference that this should be net_bt_stack?",
+      "parentUuid": "1f2f7f8d_d013e3b7",
+      "range": {
+        "startLine": 224,
+        "startChar": 44,
+        "endLine": 224,
+        "endChar": 50
+      },
+      "revId": "6c94719460c20a5faeea2de42aba77c0ab70edbd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
