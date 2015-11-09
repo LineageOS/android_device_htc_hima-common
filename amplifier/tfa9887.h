@@ -122,7 +122,6 @@ enum {
 struct tfa9887_amp_t {
     int fd;
     bool is_right;
-    bool is_on;
     uint32_t mode;
     bool initializing;
     bool writing;

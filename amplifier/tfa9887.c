@@ -800,11 +800,6 @@ static int tfa9887_hw_power(struct tfa9887_amp_t *amp, bool on)
     int error;
     uint16_t value;
 
-    if (amp->is_on == on) {
-        ALOGV("Already powered on\n");
-        return 0;
-    }
-
     error = tfa9887_read_reg(amp, TFA9887_SYSTEM_CONTROL, &value);
     if (error != 0) {
         ALOGE("Unable to read from TFA9887_SYSTEM_CONTROL");
@@ -825,8 +820,6 @@ static int tfa9887_hw_power(struct tfa9887_amp_t *amp, bool on)
     if (!on) {
         usleep(1000);
     }
-
-    amp->is_on = on;
 
 power_err:
     return error;
@@ -1679,7 +1672,6 @@ static int tfa9887_init(struct tfa9887_amp_t *amp, bool is_right)
     memset(amp, 0, sizeof(struct tfa9887_amp_t));
 
     amp->is_right = is_right;
-    amp->is_on = false;
     amp->mode = TFA9887_MODE_PLAYBACK;
     amp->initializing = true;
     amp->writing = false;
