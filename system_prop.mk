@@ -10,7 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.pcm.16bit.enable=false \
     audio.offload.pcm.24bit.enable=true \
     av.offload.enable=true \
-    av.streaming.offload.enable=true
+    av.streaming.offload.enable=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qc.sdk.audio.fluencetype=fluence \
