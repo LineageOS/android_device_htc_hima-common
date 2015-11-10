@@ -19,4 +19,6 @@
 
 #define BTM_DEF_LOCAL_NAME   "HTC One M9"
 
+#define BTA_DISABLE_DELAY 1000 /* in milliseconds */
+
 #endif
