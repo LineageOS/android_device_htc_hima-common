@@ -21,9 +21,6 @@
 
 namespace android {
 
-class CameraParameters;
-class Size;
-
 class CameraParameters_EXT
 {
 public:
