@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_94c5725e",
+        "filename": "configs/media_codecs.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-11-22T08:40:05Z",
+      "side": 1,
+      "message": "This is going to be part of the Google audio listing.",
+      "revId": "3cfb71f44e60d598901d71803537afa6e81590b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_74a0b6a6",
+        "filename": "configs/media_codecs.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-11-22T08:40:05Z",
+      "side": 1,
+      "message": "Just delete the entry.",
+      "revId": "3cfb71f44e60d598901d71803537afa6e81590b3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
