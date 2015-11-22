@@ -16,6 +16,24 @@
       "revId": "f82f6f089e4b95c99cb73739a4605634b55c0ea3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5f4e5783_54a5bab4",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 745,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-11-22T08:40:07Z",
+      "side": 1,
+      "message": "It is, I just forgot to change it before uploading, derp.",
+      "parentUuid": "5f4e5783_d4cbea6f",
+      "revId": "f82f6f089e4b95c99cb73739a4605634b55c0ea3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
