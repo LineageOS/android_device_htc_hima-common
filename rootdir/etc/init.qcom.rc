@@ -419,7 +419,7 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service perfd /system/bin/perfd
+service perfd /system/vendor/bin/perfd
    class main
    user root
    disabled
@@ -448,7 +448,7 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
 
-service thermal-engine /system/bin/thermal-engine
+service thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
    socket thermal-send-client stream 0660 system system

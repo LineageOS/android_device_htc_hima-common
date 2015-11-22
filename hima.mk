@@ -194,10 +194,10 @@ PRODUCT_PACKAGES += \
     power.msm8994
 
 # QMI
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/data/dsi_config.xml:system/etc/data/dsi_config.xml \
-    $(LOCAL_PATH)/configs/data/netmgr_config.xml:system/etc/data/netmgr_config.xml \
-    $(LOCAL_PATH)/configs/data/qmi_config.xml:system/etc/data/qmi_config.xml
+PRODUCT_PACKAGES += \
+    dsi_config.xml \
+    netmgr_config.xml \
+    qmi_config.xml
 
 # Recovery
 PRODUCT_PACKAGES += \
