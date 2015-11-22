@@ -85,7 +85,7 @@ vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libswdap.so
 
 # Bluetooth
-etc/firmware/BCM4356A2_001.003.015.0064.0175.hcd
+etc/firmware/BCM4356A2_001.003.015.0079.0263.hcd
 
 # Camera
 bin/mm-qcamera-daemon
@@ -174,7 +174,6 @@ vendor/lib/libmmcamera_isp_wb46.so
 vendor/lib/libmmcamera_ppbase_module.so
 vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_vpu_module.so
 vendor/lib/libmmipl.so
 vendor/lib/libmmjpeg.so
@@ -595,8 +594,6 @@ vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
-vendor/lib64/libdpencalib.so
-vendor/lib64/libmasc.so
 vendor/lib64/libNimsWrap.so
 vendor/lib64/libvendorconn.so
 vendor/lib64/libwqe.so
@@ -605,7 +602,6 @@ vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so
-vendor/lib/libmasc.so
 vendor/lib/libNimsWrap.so
 vendor/lib/libvendorconn.so
 vendor/lib/libwqe.so
@@ -657,11 +653,6 @@ etc/firmware/htc_drmprov.b01
 etc/firmware/htc_drmprov.b02
 etc/firmware/htc_drmprov.b03
 etc/firmware/htc_drmprov.mdt
-etc/firmware/htc_sdservice.b00
-etc/firmware/htc_sdservice.b01
-etc/firmware/htc_sdservice.b02
-etc/firmware/htc_sdservice.b03
-etc/firmware/htc_sdservice.mdt
 etc/firmware/mc_v2.b00
 etc/firmware/mc_v2.b01
 etc/firmware/mc_v2.b02
@@ -751,11 +742,16 @@ bin/cir_fw_update
 etc/cir.img
 
 # Keymaster
-vendor/firmware/keymaster.b00:vendor/firmware/keymaster/keymaster.b00
-vendor/firmware/keymaster.b01:vendor/firmware/keymaster/keymaster.b01
-vendor/firmware/keymaster.b02:vendor/firmware/keymaster/keymaster.b02
-vendor/firmware/keymaster.b03:vendor/firmware/keymaster/keymaster.b03
-vendor/firmware/keymaster.mdt:vendor/firmware/keymaster/keymaster.mdt
+#vendor/firmware/keymaster.b00:vendor/firmware/keymaster/keymaster.b00
+#vendor/firmware/keymaster.b01:vendor/firmware/keymaster/keymaster.b01
+#vendor/firmware/keymaster.b02:vendor/firmware/keymaster/keymaster.b02
+#vendor/firmware/keymaster.b03:vendor/firmware/keymaster/keymaster.b03
+#vendor/firmware/keymaster.mdt:vendor/firmware/keymaster/keymaster.mdt
+vendor/firmware/keymaster.b00
+vendor/firmware/keymaster.b01
+vendor/firmware/keymaster.b02
+vendor/firmware/keymaster.b03
+vendor/firmware/keymaster.mdt
 
 # Listen
 vendor/lib/hw/sound_trigger.primary.msm8994.so
@@ -790,7 +786,7 @@ vendor/firmware/libpn547_fw.so
 # Perf
 bin/energy-awareness
 bin/msm_irqbalance
-bin/perfd
+vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
@@ -861,12 +857,9 @@ vendor/lib64/libxml.so
 
 # Sensors
 lib64/hw/sensors.msm8994.so
-vendor/lib64/hw/activity_recognition.msm8994.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
 
 # Thermal
-bin/thermal-engine
+vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 vendor/lib/libthermalclient.so
