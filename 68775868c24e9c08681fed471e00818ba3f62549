@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f4e5783_f493865b",
+        "filename": "camera/CameraParameters.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 551,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-11-22T08:40:40Z",
+      "side": 1,
+      "message": "Is this really the only difference?",
+      "revId": "68775868c24e9c08681fed471e00818ba3f62549",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
