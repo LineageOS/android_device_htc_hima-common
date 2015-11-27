@@ -17,14 +17,13 @@
 #define LOG_TAG "audio_amplifier"
 //#define LOG_NDEBUG 0
 
-#include <stdio.h>
-#include <sys/ioctl.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ioctl.h>
 
 #include <cutils/log.h>
-
 #include <hardware/audio_amplifier.h>
-
 #include <msm8974/platform.h>
 
 #include "tfa9887.h"

@@ -18,5 +18,8 @@
 /dev/block/bootdevice/by-name/modem_st2     u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/rfg_[0-9]*    u:object_r:modem_efs_partition_device:s0
 
-# QMUX
-/dev/socket/qmux_nfc(/.*)?      u:object_r:qmuxd_socket:s0
+# Perf
+/system/bin/perfd               u:object_r:perfd_exec:s0
+
+# Thermal
+/system/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
