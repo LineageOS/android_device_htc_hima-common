@@ -1,4 +1,0 @@
-# thermal-engine really shouldn't be using /data/local anyway
-# so it's hard to get around giving it the same grants shell has
-allow thermal-engine shell_data_file:dir create_dir_perms;
-allow thermal-engine shell_data_file:file create_file_perms;
