@@ -4,6 +4,9 @@
 /dev/tfa9887                    u:object_r:audio_device:s0
 /dev/tfa9887l                   u:object_r:audio_device:s0
 
+# Camera
+/data/OTPData.dat               u:object_r:camera_data_file:s0
+
 # CIR
 /dev/ttyHSL2                    u:object_r:cir_device:s0
 /system/bin/cir_fw_update       u:object_r:cir_fw_update_exec:s0
@@ -18,5 +21,8 @@
 /dev/block/bootdevice/by-name/modem_st2     u:object_r:modem_efs_partition_device:s0
 /dev/block/bootdevice/by-name/rfg_[0-9]*    u:object_r:modem_efs_partition_device:s0
 
-# QMUX
-/dev/socket/qmux_nfc(/.*)?      u:object_r:qmuxd_socket:s0
+# Perf
+/system/bin/perfd               u:object_r:perfd_exec:s0
+
+# Thermal
+/system/bin/thermal-engine      u:object_r:thermal-engine_exec:s0

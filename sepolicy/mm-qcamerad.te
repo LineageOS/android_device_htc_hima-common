@@ -1,3 +1,3 @@
-allow mm-qcamerad camera_prop:property_service set;
-
-unix_socket_connect(mm-qcamerad, property, init)
+allow mm-qcamerad system_file:file execmod; # for libmmcamera_faceproc
+set_prop(mm-qcamerad, camera_prop)
+type_transition mm-qcamerad system_data_file:file camera_data_file "OTPData.dat";
