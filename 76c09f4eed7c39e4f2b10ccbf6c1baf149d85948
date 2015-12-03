@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf8cb3f7_e71d11be",
+        "filename": "configs/data/dsi_config.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 12219
+      },
+      "writtenOn": "2015-12-03T06:17:52Z",
+      "side": 1,
+      "message": "has to be at start of file or am i missing something here?",
+      "revId": "76c09f4eed7c39e4f2b10ccbf6c1baf149d85948",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
