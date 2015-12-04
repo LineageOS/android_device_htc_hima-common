@@ -61,6 +61,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
+    mm.enable.qcom_parser=3314291 \
     mm.enable.smoothstreaming=true
 
 # NFC
