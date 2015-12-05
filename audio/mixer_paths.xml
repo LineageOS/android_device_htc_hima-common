@@ -2351,11 +2351,11 @@
     </path>
 
     <path name="camcorder-stereo-dmic">
-        <path name="line-landscapecam" />
+        <path name="handset-mic" />
     </path>
 
     <path name="camcorder-stereo-dmic-reverse">
-        <path name="line-invertlandscapecam" />
+        <path name="handset-mic" />
     </path>
 
     <path name="hdmi-tx">
