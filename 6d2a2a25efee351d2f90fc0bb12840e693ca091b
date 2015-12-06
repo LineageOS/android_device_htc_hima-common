@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_c844a3ba",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-12-06T02:09:54Z",
+      "side": 1,
+      "message": "If we\u0027re renaming, might was well go ahead and rename it to BCM4354A2.hcd and get rid of the random version numbers like shamu does.",
+      "range": {
+        "startLine": 88,
+        "startChar": 62,
+        "endLine": 88,
+        "endChar": 97
+      },
+      "revId": "6d2a2a25efee351d2f90fc0bb12840e693ca091b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
