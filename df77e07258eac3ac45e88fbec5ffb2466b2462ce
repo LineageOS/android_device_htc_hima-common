@@ -16,6 +16,24 @@
       "revId": "df77e07258eac3ac45e88fbec5ffb2466b2462ce",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9f91af0f_d3d694f2",
+        "filename": "audio/mixer_paths.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2354,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2015-12-06T12:40:44Z",
+      "side": 1,
+      "message": "Yeah, HTC sets dual mic input in stock so we\u0027re doing the same in CM, though we might want to change that. Thing is though, those paths we\u0027re currently pointing to, those are the ones HTC uses on stock so its weird that the volume is low",
+      "parentUuid": "9f91af0f_13cddc5c",
+      "revId": "df77e07258eac3ac45e88fbec5ffb2466b2462ce",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
