@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9f91af0f_13cddc5c",
+        "filename": "audio/mixer_paths.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 2354,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2015-12-06T12:38:43Z",
+      "side": 1,
+      "message": "Camcorder is hitting this usecase and not the camcorder-mic usecase above? Is media_profiles requesting multiple input channels?",
+      "revId": "df77e07258eac3ac45e88fbec5ffb2466b2462ce",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
