@@ -116,7 +116,7 @@ public class Dotcase extends Activity implements SensorEventListener
     protected void onResume() {
         super.onResume();
         mSensorManager.registerListener(this,
-                mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY),
+                mSensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY, false),
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
 
