@@ -367,6 +367,17 @@ service energy-awareness /system/bin/energy-awareness
     group system
     oneshot
 
+service ipacm-diag /system/bin/ipacm-diag
+    class main
+    user system
+    socket ipacm_log_file dgram 660 system net_admin
+    group net_admin qcom_diag
+
+service ipacm /system/bin/ipacm
+    class main
+    user net_admin
+    group net_admin inet
+
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class main
     user root
