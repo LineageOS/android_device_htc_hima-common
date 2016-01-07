@@ -714,6 +714,9 @@ vendor/lib/libscale.so
 etc/firmware/a420_pfp.fw
 etc/firmware/a420_pm4.fw
 
+# IPA
+bin/ipacm-diag
+
 # IR
 bin/cir_fw_update
 etc/cir.img

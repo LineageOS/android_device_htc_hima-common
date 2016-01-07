@@ -135,6 +135,11 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/projector-Keypad.kl:system/usr/keylayout/projector-Keypad.kl \
     $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:system/usr/keylayout/synaptics_dsx.kl
 
+# IPACM
+PRODUCT_PACKAGES += \
+    IPACM_cfg.xml \
+    ipacm
+
 # IPv6
 PRODUCT_PACKAGES += \
     ebtables \
