@@ -88,7 +88,8 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    libcamera_shim
+    libcamera_shim \
+    Snap
 
 # Compat symbols
 PRODUCT_PACKAGES += \
