@@ -74,11 +74,8 @@ static int amp_enable_output_devices(amplifier_device_t *device,
         case SND_DEVICE_OUT_VOICE_SPEAKER:
         case SND_DEVICE_OUT_SPEAKER_PROTECTED:
         case SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES:
-            tfa9887_power(enable);
             if (enable) {
                 /* FIXME: This may fail because I2S is not active */
-                tfa9887_set_mute(false);
-                tfa9887_set_mode(dev->current_mode);
             }
             break;
     }
@@ -89,9 +86,6 @@ static int amp_enable_output_devices(amplifier_device_t *device,
 static int amp_dev_close(hw_device_t *device)
 {
     m9_device_t *dev = (m9_device_t *) device;
-
-    tfa9887_power(false);
-    tfa9887_close();
 
     free(dev);
 
@@ -133,7 +127,6 @@ static int amp_module_open(const hw_module_t *module, UNUSED const char *name,
 
     *device = (hw_device_t *) m9_dev;
 
-    tfa9887_open();
     rt55xx_open();
 
     return 0;
