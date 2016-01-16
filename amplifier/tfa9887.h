@@ -92,7 +92,6 @@ typedef struct uint24 {
 #define DRC_VOIP_L "/system/etc/tfa/voip_l.drc"
 
 struct mode_config_t {
-    const char *config;
     const char *preset;
     const char *eq;
     const char *drc;
@@ -151,6 +150,7 @@ struct tfa9887_amp_t {
 #define PARAM_SET_PRESET         0x0D  // Load a preset
 #define PARAM_SET_CONFIG         0x0E  // Load a config
 #define PARAM_SET_DRC            0x0F  // Load DRC file
+#define PARAM_SET_AGC            0x10  /* Load AGC params */
 #define PARAM_SET_RE0            0x89  /* sets the speaker calibration impedance (@25 degrees celsius) */
 
 #define PARAM_GET_CONFIG_PRESET  0x80
@@ -259,6 +259,7 @@ struct tfa9887_amp_t {
 int tfa9887_open(void);
 int tfa9887_power(bool on);
 int tfa9887_set_mode(audio_mode_t mode);
+int tfa9887_set_mute(bool on);
 int tfa9887_close(void);
 
 #endif

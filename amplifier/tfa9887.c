@@ -40,19 +40,16 @@
 
 const struct mode_config_t right_mode_configs[TFA9887_MODE_MAX] = {
     {   /* Playback */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_PLAYBACK_R,
         .eq = EQ_PLAYBACK_R,
         .drc = DRC_PLAYBACK_R,
     },
     {   /* Voice */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_VOICE_R,
         .eq = EQ_VOICE_R,
         .drc = DRC_VOICE_R,
     },
     {   /* VOIP */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_VOIP_R,
         .eq = EQ_VOIP_R,
         .drc = DRC_VOIP_R,
@@ -61,19 +58,16 @@ const struct mode_config_t right_mode_configs[TFA9887_MODE_MAX] = {
 
 const struct mode_config_t left_mode_configs[TFA9887_MODE_MAX] = {
     {   /* Playback */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_PLAYBACK_L,
         .eq = EQ_PLAYBACK_L,
         .drc = DRC_PLAYBACK_L,
     },
     {   /* Voice */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_VOICE_L,
         .eq = EQ_VOICE_L,
         .drc = DRC_VOICE_L,
     },
     {   /* VOIP */
-        .config = CONFIG_TFA9887,
         .preset = PRESET_VOIP_L,
         .eq = EQ_VOIP_L,
         .drc = DRC_VOIP_L,
@@ -422,6 +416,45 @@ static int tfa9887_read_mem(struct tfa9887_amp_t *amp, uint16_t start_offset,
     bytes2data(mem, num_words * 3, p_values);
 
 read_mem_err:
+    return rc;
+}
+
+static int tfa9887_write_mem(struct tfa9887_amp_t *amp, uint16_t address,
+        int size, uint8_t *buf)
+{
+    int rc = 0;
+    uint16_t cf_ctrl;
+
+    if (!amp) {
+        return -ENODEV;
+    }
+
+    /* first set DMEM and AIF, leaving other bits intact */
+    rc = tfa9887_read_reg(amp, TFA9887_CF_CONTROLS, &cf_ctrl);
+    if (rc) {
+        ALOGE("%s: Failure reading from register CF_CONTROLS: %d", __func__, rc);
+        goto write_mem_err;
+    }
+    cf_ctrl &= ~0x000E; /* clear AIF & DMEM */
+    cf_ctrl |= (TFA9887_DMEM_XMEM << 1); /* set DMEM, leave AIF cleared for autoincrement */
+    rc = tfa9887_write_reg(amp, TFA9887_CF_CONTROLS, cf_ctrl);
+    if (rc) {
+        ALOGE("%s: Failed to write register CF_CONTROLS: %d\n", __func__, rc);
+        goto write_mem_err;
+    }
+    rc = tfa9887_write_reg(amp, TFA9887_CF_MAD, address);
+    if (rc) {
+        ALOGE("%s: Failed to write register CF_MAD: %d\n", __func__, rc);
+        goto write_mem_err;
+    }
+    /* Memory is always 3-byte aligned */
+    rc = tfa9887_write(amp, TFA9887_CF_MEM, buf, size, 3);
+    if (rc) {
+        ALOGE("%s: Unable to write to %04x: %d\n", __func__, address, rc);
+        goto write_mem_err;
+    }
+
+write_mem_err:
     return rc;
 }
 
@@ -1363,10 +1396,20 @@ set_cal_imp_err:
     return rc;
 }
 
+static int tfa9887_reset_agc(struct tfa9887_amp_t *amp)
+{
+    uint8_t data[3];
+    int32_t agc = 0;
+
+    data2bytes(&agc, 1, data);
+    return tfa9887_set_data(amp, MODULE_SPEAKERBOOST, PARAM_SET_AGC,
+            data, 3);
+}
+
 static int tfa9887_hw_init(struct tfa9887_amp_t *amp, int sample_rate)
 {
     int rc = 0;
-    const char *patch_file, *speaker_file;
+    const char *speaker_file;
     int channel;
     uint8_t patch_buf[MAX_PATCH_SIZE];
     int patch_size;
@@ -1377,11 +1420,9 @@ static int tfa9887_hw_init(struct tfa9887_amp_t *amp, int sample_rate)
 
     if (amp->is_right) {
         channel = 1;
-        patch_file = PATCH_TFA9887;
         speaker_file = SPKR_R;
     } else {
         channel = 0;
-        patch_file = PATCH_TFA9887;
         speaker_file = SPKR_L;
     }
 
@@ -1428,10 +1469,10 @@ static int tfa9887_hw_init(struct tfa9887_amp_t *amp, int sample_rate)
     }
 
     /* load patch firmware */
-    patch_size = read_file(patch_file, patch_buf, MAX_PATCH_SIZE,
+    patch_size = read_file(PATCH_TFA9887, patch_buf, MAX_PATCH_SIZE,
             PATCH_HEADER_LENGTH);
     if (patch_size < 0) {
-        ALOGE("%s: Failed to read patch file %s\n", __func__, patch_file);
+        ALOGE("%s: Failed to read patch file %s\n", __func__, PATCH_TFA9887);
         goto priv_init_err;
     }
     rc = tfa9887_load_patch(amp, patch_buf, patch_size);
@@ -1453,6 +1494,27 @@ static int tfa9887_hw_init(struct tfa9887_amp_t *amp, int sample_rate)
         goto priv_init_err;
     }
     ALOGI("%s: Loaded speaker file\n", __func__);
+
+    rc = tfa9887_reset_agc(amp);
+    if (rc) {
+        ALOGE("%s: Unable to reset AGC: %d\n", __func__, rc);
+        goto priv_init_err;
+    }
+    ALOGI("%s: Reset AGC after speaker load\n", __func__);
+
+    rc = tfa9887_load_dsp(amp, CONFIG_TFA9887);
+    if (rc) {
+        ALOGE("%s: Unable to load config data: %d\n", __func__, rc);
+        goto priv_init_err;
+    }
+    ALOGI("%s: Loaded config file\n", __func__);
+
+    rc = tfa9887_reset_agc(amp);
+    if (rc) {
+        ALOGE("%s: Unable to reset AGC: %d\n", __func__, rc);
+        goto priv_init_err;
+    }
+    ALOGI("%s: Reset AGC after config load\n", __func__);
 
     ALOGI("%s: Initialized hardware", __func__);
 
@@ -1509,6 +1571,7 @@ htc_init_err:
 static int tfa9887_set_dsp_mode(struct tfa9887_amp_t *amp, uint32_t mode)
 {
     int error;
+    uint8_t buf[3];
     const struct mode_config_t *config;
 
     if (!amp) {
@@ -1523,12 +1586,15 @@ static int tfa9887_set_dsp_mode(struct tfa9887_amp_t *amp, uint32_t mode)
         ALOGV("%s: Setting left mode to %d\n", __func__, mode);
     }
 
-    error = tfa9887_load_dsp(amp, config[mode].config);
+    buf[0] = 0;
+    buf[1] = 0;
+    buf[2] = (mode == TFA9887_MODE_VOICE || mode == TFA9887_MODE_VOIP) ? 0 : 1;
+    error = tfa9887_write_mem(amp, 0x0293, 3, buf);
     if (error != 0) {
-        ALOGE("%s: Unable to load config data\n", __func__);
+        ALOGE("%s: Unable to write memory at 0x293\n", __func__);
         goto set_dsp_err;
     }
-    ALOGI("%s: Loaded config\n", __func__);
+    ALOGI("%s: Prepared memory\n", __func__);
     error = tfa9887_load_dsp(amp, config[mode].preset);
     if (error != 0) {
         ALOGE("%s: Unable to load preset data\n", __func__);
@@ -1584,7 +1650,7 @@ static int tfa9887_wait_for_calibration(struct tfa9887_amp_t *amp,
             *cal_value = 0;
             goto wait_cal_err;
         } else {
-            *cal_value = TFA9887_MTP_MTPEX;
+            *cal_value = 1;
         }
     } else {
         do {
@@ -1771,7 +1837,7 @@ int tfa9887_open(void)
                 ALOGI("%s: DSP calibration already loaded\n", __func__);
             } else {
                 ALOGI("%s: DSP not calibrated\n", __func__);
-                /* TODO: mute?? */
+                rc = tfa9887_mute(amp, TFA9887_MUTE_DIGITAL);
             }
 
             /* Set config, preset, EQ, DRC */
@@ -1918,6 +1984,29 @@ int tfa9887_set_mode(audio_mode_t mode)
     }
 
     ALOGV("%s: Set amplifier audio mode to %d\n", __func__, mode);
+
+    return 0;
+}
+
+int tfa9887_set_mute(bool on)
+{
+    int i, rc;
+    struct tfa9887_amp_t *amp = NULL;
+
+    if (!amps) {
+        ALOGE("%s: TFA9887 not open!\n", __func__);
+        return -ENODEV;
+    }
+
+    for (i = 0; i < AMP_MAX; i++) {
+        amp = &amps[i];
+        rc = tfa9887_mute(amp, on ? TFA9887_MUTE_DIGITAL : TFA9887_MUTE_OFF);
+        if (rc) {
+            ALOGE("Unable to mute: %d\n", rc);
+        }
+    }
+
+    ALOGI("%s: Set mute to %d\n", __func__, on);
 
     return 0;
 }

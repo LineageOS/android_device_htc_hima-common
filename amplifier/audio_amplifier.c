@@ -77,6 +77,7 @@ static int amp_enable_output_devices(amplifier_device_t *device,
             tfa9887_power(enable);
             if (enable) {
                 /* FIXME: This may fail because I2S is not active */
+                tfa9887_set_mute(false);
                 tfa9887_set_mode(dev->current_mode);
             }
             break;
