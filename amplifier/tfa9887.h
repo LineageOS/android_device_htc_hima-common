@@ -151,7 +151,7 @@ struct tfa9887_amp_t {
 #define PARAM_SET_CONFIG         0x0E  // Load a config
 #define PARAM_SET_DRC            0x0F  // Load DRC file
 #define PARAM_SET_AGC            0x10  /* Load AGC params */
-#define PARAM_SET_RE0            0x89  /* sets the speaker calibration impedance (@25 degrees celsius) */
+#define PARAM_SET_RE0            0x00  /* sets the speaker calibration impedance (@25 degrees celsius) */
 
 #define PARAM_GET_CONFIG_PRESET  0x80
 #define PARAM_GET_RE0            0x85  /* gets the speaker calibration impedance (@25 degrees celsius) */
@@ -255,6 +255,9 @@ struct tfa9887_amp_t {
 #define TFA9887_MTP (0x80)
 
 #define I2S_MIXER_CTL "QUAT_MI2S_RX Audio Mixer MultiMedia1"
+
+#define DEFAULT_CALIBRATION_R 8.3f
+#define DEFAULT_CALIBRATION_L 8.5f
 
 int tfa9887_open(void);
 int tfa9887_power(bool on);
