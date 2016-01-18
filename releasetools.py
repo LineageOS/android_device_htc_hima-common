@@ -16,6 +16,7 @@
 import hashlib
 import common
 import re
+import os
 
 def FullOTA_Assertions(info):
   AddTrustZoneAssertion(info, info.input_zip)
@@ -34,3 +35,8 @@ def AddTrustZoneAssertion(info, input_zip):
       cmd = 'assert(hima.verify_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
       info.script.AppendExtra(cmd)
   return
+
+def FullOTA_InstallEnd(info):
+  info.script.Mount("/system")
+  info.script.AppendExtra('assert(run_program("/tmp/install/bin/firmware.sh") == 0);')
+  info.script.Unmount("/system")

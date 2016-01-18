@@ -112,6 +112,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps.conf:system/etc/gps.conf
 
+# Correct adsp firmware symlinking
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/releasetools/firmware.sh:install/bin/firmware.sh
+
 # HTC Logging functions
 PRODUCT_PACKAGES += \
     liblog_htc
