@@ -28,7 +28,7 @@
 #include "rt5501.h"
 
 static struct rt55xx_config rt55xx_playback_config = {
-    .reg_len = 9,
+    .reg_len = 10,
     .reg = {
         { 0x00, 0xC0, },
         { 0x01, 0x1A, }, // gain -2dB
@@ -44,7 +44,7 @@ static struct rt55xx_config rt55xx_playback_config = {
 };
 
 static struct rt55xx_config rt55xx_playback_128_config = {
-    .reg_len = 9,
+    .reg_len = 10,
     .reg = {
         { 0x00, 0xC0, },
         { 0x01, 0x1D, }, // gain +1dB
