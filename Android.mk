@@ -53,14 +53,23 @@ ADSP_IMAGES := \
     adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
     adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 adsp.b14 adsp.b15 adsp.mdt
 
-ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(ADSP_IMAGES)))
-$(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "ADSP firmware link: $@"
+ADSP_SYMLINKS_L := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(ADSP_IMAGES)))
+$(ADSP_SYMLINKS_L): $(LOCAL_INSTALLED_MODULE)
+	@echo "ADSP (L) firmware link: $@"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
 	$(hide) ln -sf /firmware/adsp/image/$(notdir $@) $@
 
-ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS)
+ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS_L)
+
+ADSP_SYMLINKS_M := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(ADSP_IMAGES)))
+$(ADSP_SYMLINKS_M): $(LOCAL_INSTALLED_MODULE)
+	@echo "ADSP (M) firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/adsp/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(ADSP_SYMLINKS_M)
 
 CPE_IMAGES := \
     cpe.b00 cpe.b01 cpe.b02 cpe.b03 cpe.b04 cpe.b05 \
