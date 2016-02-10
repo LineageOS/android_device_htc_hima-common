@@ -1,1 +1,2 @@
 require version-trustzone=TZ.BF.3.0.R1-00142|TZ.BF.3.0.R1-00193
+require version-trustzone=1.1.41.1.A1|1.1.41.1.A2|1.2.50.1.35
