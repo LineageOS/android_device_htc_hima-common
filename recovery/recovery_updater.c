@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015, The CyanogenMod Project
+ * Copyright (C) 2016, The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@
 
 #define ALPHABET_LEN 256
 #define KB 1024
+
+#define SBL1_PART_PATH "/dev/block/bootdevice/by-name/sbl1"
+#define SBL1_VER_STR "hTCVer"
+#define SBL1_VER_STR_LEN 6
+#define SBL1_VER_BUF_LEN 255
+#define SBL1_SZ 1024 * KB    /* MMAP 1024K of SBL1, SBL1 partition is 1024K */
 
 #define TZ_PART_PATH "/dev/block/bootdevice/by-name/tz"
 #define TZ_VER_STR "QC_IMAGE_VERSION_STRING="
@@ -116,6 +122,39 @@ static char * bm_search(const char *str, size_t str_len, const char *pat,
     return NULL;
 }
 
+static int get_sbl1_version(char *ver_str, size_t len) {
+    int ret = 0;
+    int fd;
+    char *sbl1_data = NULL;
+    char *offset = NULL;
+
+    fd = open(SBL1_PART_PATH, O_RDONLY);
+    if (fd < 0) {
+        ret = errno;
+        goto err_ret;
+    }
+
+    sbl1_data = (char *) mmap(NULL, SBL1_SZ, PROT_READ, MAP_PRIVATE, fd, 0);
+    if (sbl1_data == (char *)-1) {
+        ret = errno;
+        goto err_fd_close;
+    }
+
+    /* Do Boyer-Moore search across SBL1 data */
+    offset = bm_search(sbl1_data, SBL1_SZ, SBL1_VER_STR, SBL1_VER_STR_LEN);
+    if (offset != NULL) {
+        strncpy(ver_str, offset + SBL1_VER_STR_LEN, len);
+    } else {
+        ret = -ENOENT;
+    }
+
+    munmap(sbl1_data, SBL1_SZ);
+err_fd_close:
+    close(fd);
+err_ret:
+    return ret;
+}
+
 static int get_tz_version(char *ver_str, size_t len) {
     int ret = 0;
     int fd;
@@ -149,6 +188,40 @@ err_ret:
     return ret;
 }
 
+/* verify_sbl1("SBL1_VERSION", "SBL1_VERSION", ...) */
+Value * VerifySBL1Fn(const char *name, State *state, int argc, Expr *argv[]) {
+    char current_sbl1_version[SBL1_VER_BUF_LEN];
+    int i, ret;
+
+    ret = get_sbl1_version(current_sbl1_version, SBL1_VER_BUF_LEN);
+    if (ret) {
+        return ErrorAbort(state, "%s() failed to read current SBL1 version: %d",
+                name, ret);
+    }
+
+    char** sbl1_version = ReadVarArgs(state, argc, argv);
+    if (sbl1_version == NULL) {
+        return ErrorAbort(state, "%s() error parsing arguments", name);
+    }
+
+    ret = 0;
+    for (i = 0; i < argc; i++) {
+        uiPrintf(state, "Comparing SBL1 version %s to %s\n",
+                sbl1_version[i], current_sbl1_version);
+        if (strncmp(sbl1_version[i], current_sbl1_version, strlen(sbl1_version[i])) == 0) {
+            ret = 1;
+            break;
+        }
+    }
+
+    for (i = 0; i < argc; i++) {
+        free(sbl1_version[i]);
+    }
+    free(sbl1_version);
+
+    return StringValue(strdup(ret ? "1" : "0"));
+}
+
 /* verify_trustzone("TZ_VERSION", "TZ_VERSION", ...) */
 Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]) {
     char current_tz_version[TZ_VER_BUF_LEN];
@@ -167,7 +240,7 @@ Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]
 
     ret = 0;
     for (i = 0; i < argc; i++) {
-        uiPrintf(state, "Comparing TZ version %s to %s",
+        uiPrintf(state, "Comparing TZ version %s to %s\n",
                 tz_version[i], current_tz_version);
         if (strncmp(tz_version[i], current_tz_version, strlen(tz_version[i])) == 0) {
             ret = 1;
@@ -184,5 +257,6 @@ Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]
 }
 
 void Register_librecovery_updater_hima() {
+    RegisterFunction("hima.verify_sbl1", VerifySBL1Fn);
     RegisterFunction("hima.verify_trustzone", VerifyTrustZoneFn);
 }

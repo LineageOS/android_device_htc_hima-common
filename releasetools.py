@@ -18,11 +18,23 @@ import common
 import re
 
 def FullOTA_Assertions(info):
+  AddSbl1Assertion(info, info.input_zip)
   AddTrustZoneAssertion(info, info.input_zip)
   return
 
 def IncrementalOTA_Assertions(info):
+  AddSbl1Assertion(info, info.target_zip)
   AddTrustZoneAssertion(info, info.target_zip)
+  return
+
+def AddSbl1Assertion(info, input_zip):
+  android_info = info.input_zip.read("OTA/android-info.txt")
+  m = re.search(r'require\s+version-sbl1\s*=\s*(\S+)', android_info)
+  if m:
+    versions = m.group(1).split('|')
+    if len(versions) and '*' not in versions:
+      cmd = 'assert(hima.verify_sbl1(' + ','.join(['"%s"' % sbl1 for sbl1 in versions]) + ') == "1");'
+      info.script.AppendExtra(cmd)
   return
 
 def AddTrustZoneAssertion(info, input_zip):
