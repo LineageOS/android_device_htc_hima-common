@@ -1,1 +1,1 @@
-require version-trustzone=TZ.BF.3.0.R1-00142|TZ.BF.3.0.R1-00193
+require version-sbl1=1.2.50.1.36
