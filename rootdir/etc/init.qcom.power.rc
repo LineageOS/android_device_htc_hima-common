@@ -71,7 +71,7 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
     # configure core_ctl module parameters
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
-    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 4
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 70
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 20
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms  100
