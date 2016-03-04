@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ffb9cba7_8a216e50",
+        "filename": "rootdir/etc/init.qcom.power.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 10258
+      },
+      "writtenOn": "2016-03-04T14:23:05Z",
+      "side": 1,
+      "message": "Are these lines still useful if not hotplug little core?",
+      "range": {
+        "startLine": 73,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 60
+      },
+      "revId": "bc54cb907372ed1d3db35b16040043ec7256267f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
