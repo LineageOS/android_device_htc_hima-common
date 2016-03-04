@@ -22,6 +22,24 @@
       "revId": "bc54cb907372ed1d3db35b16040043ec7256267f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ffb9cba7_8aa2ce99",
+        "filename": "rootdir/etc/init.qcom.power.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 7880
+      },
+      "writtenOn": "2016-03-04T18:33:03Z",
+      "side": 1,
+      "message": "I doubt they do anything and I think they can be removed.",
+      "parentUuid": "ffb9cba7_8a216e50",
+      "revId": "bc54cb907372ed1d3db35b16040043ec7256267f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
