@@ -87,7 +87,7 @@ on enable-low-power
     write /proc/sys/kernel/sched_freq_inc_notify 400000
     write /proc/sys/kernel/sched_freq_dec_notify 400000
     #enable rps static configuration
-    write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus 8
+    write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus "0f"
     write /sys/class/devfreq/qcom,cpubw.34/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,mincpubw.35/governor "cpufreq"
 
