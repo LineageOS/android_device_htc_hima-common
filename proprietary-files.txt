@@ -714,6 +714,8 @@ bin/ipacm-diag
 # IR
 bin/cir_fw_update
 etc/cir.img
+lib/hw/consumerir.default.so
+lib64/hw/consumerir.default.so
 
 # Keymaster
 vendor/firmware/keymaster.b00:vendor/firmware/keymaster/keymaster.b00
