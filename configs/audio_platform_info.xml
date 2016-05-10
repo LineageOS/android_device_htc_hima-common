@@ -90,8 +90,10 @@
     </acdb_ids>
 
     <backend_names>
-        <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" />
-        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" />
+        <device name="SND_DEVICE_OUT_SPEAKER" backend="speaker" interface="QUAT_MI2S_RX" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" backend="" interface="speaker-headset" interface="QUAT_MI2S_RX-and-SLIMBUS_0_RX" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" backend="" interface="speaker-headset" interface="QUAT_MI2S_RX-and-SLIMBUS_0_RX" />
+        <device name="SND_DEVICE_OUT_VOICE_SPEAKER" backend="speaker" interface="QUAT_MI2S_RX" />
     </backend_names>
 
     <bit_width_configs>
@@ -107,7 +109,9 @@
         <device name="SND_DEVICE_OUT_HANDSET" alias="earpiece" />
         <device name="SND_DEVICE_OUT_SPEAKER" alias="speaker" />
         <device name="SND_DEVICE_OUT_HEADPHONES" alias="headphones" />
+        <device name="SND_DEVICE_OUT_LINE" alias="headphones" />
         <device name="SND_DEVICE_OUT_SPEAKER_AND_HEADPHONES" alias="headphones" />
+        <device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" alias="headphones" />
         <device name="SND_DEVICE_OUT_VOICE_HANDSET" alias="earpiece-voice" />
         <device name="SND_DEVICE_OUT_VOICE_SPEAKER" alias="speaker-voice" />
         <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" alias="headphones-voice" />
