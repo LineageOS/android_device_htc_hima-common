@@ -334,6 +334,10 @@ on boot
     chown system graphics /sys/class/leds/lcd-backlight/cabc_level_ctl
     chown system system /sys/class/leds/lcd-backlight-nits/brightness
 
+    # Set vibrator intensity permissions
+    chown system system /sys/devices/virtual/timed_output/vibrator/voltage_level
+    chmod 0644 /sys/devices/virtual/timed_output/vibrator/voltage_level
+
 # Services start here
 
 service adsprpcd /system/bin/adsprpcd
