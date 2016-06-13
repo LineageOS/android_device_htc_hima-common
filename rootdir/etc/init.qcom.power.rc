@@ -91,6 +91,12 @@ on enable-low-power
     write /sys/class/devfreq/qcom,cpubw.34/governor "bw_hwmon"
     write /sys/class/devfreq/qcom,mincpubw.35/governor "cpufreq"
 
+    # Update foreground and background cpusets
+    write /dev/cpuset/foreground/cpus 0-7
+    write /dev/cpuset/foreground/boost/cpus 0-3
+    write /dev/cpuset/background/cpus 4
+    write /dev/cpuset/system-background/cpus 4-7
+
     rm /data/system/perfd/default_values
     start perfd
 
