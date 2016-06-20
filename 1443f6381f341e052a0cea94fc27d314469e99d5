@@ -16,6 +16,24 @@
       "revId": "1443f6381f341e052a0cea94fc27d314469e99d5",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5faad753_6d029b3f",
+        "filename": "configs/com.htc.software.market.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-06-20T15:26:51Z",
+      "side": 1,
+      "message": "#justHTCthings",
+      "parentUuid": "5faad753_cdf14f6d",
+      "revId": "1443f6381f341e052a0cea94fc27d314469e99d5",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
