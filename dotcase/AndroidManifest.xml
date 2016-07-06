@@ -31,6 +31,16 @@
                 <action android:name="CoverObserver"/>
             </intent-filter>
         </service>
+        <service android:name="ScreenStateService" android:permission="ScreenStateService">
+            <intent-filter>
+                <action android:name="ScreenStateService"/>
+            </intent-filter>
+        </service>
+        <service android:name="SensorService" android:permission="SensorService">
+            <intent-filter>
+                <action android:name="SensorService"/>
+            </intent-filter>
+        </service>
 
         <activity
             android:name="Dotcase"
