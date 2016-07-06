@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.cyanogenmod.settings.device"
+      android:sharedUserId="android.uid.systemui">
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <application android:label="GestureHandler"
+        android:process="com.android.systemui"
+        android:theme="@android:style/Theme.Material.Settings" >
+        <receiver android:name="com.cyanogenmod.settings.device.BootCompletedReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+        <service android:name="CoverObserver" android:permission="CoverObserver">
+            <intent-filter>
+                <action android:name="CoverObserver"/>
+            </intent-filter>
+        </service>
+        <service android:name="ScreenStateService" android:permission="ScreenStateService">
+            <intent-filter>
+                <action android:name="ScreenStateService"/>
+            </intent-filter>
+        </service>
+        <service android:name="SensorService" android:permission="SensorService">
+            <intent-filter>
+                <action android:name="SensorService"/>
+            </intent-filter>
+        </service>
+        <!-- intentionally commented out until I can get around to actually making
+             use of the swipe gestures (setting actions, custom actions even would be nice)
+        -->
+        <!--activity
+            android:name=".TouchscreenGestureSettings"
+            android:label="@string/screen_gestures_panel_title">
+            <intent-filter>
+                <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.device" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_settings_gestures" />
+        </activity-->
+    </application>
+</manifest>
