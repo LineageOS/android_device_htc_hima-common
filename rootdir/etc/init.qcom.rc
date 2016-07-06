@@ -311,6 +311,9 @@ on boot
     chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/mcu_wakeup
     chmod 664 /sys/devices/virtual/htc_sensorhub/sensor_hub/sensor_hub_rdata
 
+    # gesture sensor enable
+    write /sys/class/htc_sensorhub/sensor_hub/gesture_motion 8000
+
     chown system system /sys/class/optical_sensors/proximity/p_status
     chown radio radio /sys/class/optical_sensors/proximity/ps_adc
 
