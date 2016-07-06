@@ -3,7 +3,7 @@
     package="org.cyanogenmod.dotcase"
     android:versionCode="1"
     android:versionName="1.0"
-    android:sharedUserId="android.uid.system">
+    android:sharedUserId="android.uid.systemui">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
@@ -16,7 +16,7 @@
 
     <application
         android:label="Dotcase"
-        android:persistent="true">
+        android:process="com.android.systemui">
 
         <receiver android:name="org.cyanogenmod.dotcase.BootCompletedReceiver">
             <intent-filter>
@@ -28,6 +28,16 @@
         <service android:name="CoverObserver" android:permission="CoverObserver">
             <intent-filter>
                 <action android:name="CoverObserver"/>
+            </intent-filter>
+        </service>
+        <service android:name="ScreenStateService" android:permission="ScreenStateService">
+            <intent-filter>
+                <action android:name="ScreenStateService"/>
+            </intent-filter>
+        </service>
+        <service android:name="SensorService" android:permission="SensorService">
+            <intent-filter>
+                <action android:name="SensorService"/>
             </intent-filter>
         </service>
 

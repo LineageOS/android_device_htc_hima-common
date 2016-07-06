@@ -33,5 +33,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
                                   "org.cyanogenmod.dotcase");
 
         new CoverObserver(context).init();
+        Intent serviceIntent = new Intent(context, ScreenStateService.class);
+        context.startService(serviceIntent);
     }
 }
