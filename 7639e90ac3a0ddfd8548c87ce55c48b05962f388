@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_62731617",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-15T02:35:34Z",
+      "side": 1,
+      "message": "until we have actual actions for the other gestures, we shouldn\u0027t do this unless DOUBLE_TAP was hit, otherwise gestures wont work again until screen on, then off again",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
