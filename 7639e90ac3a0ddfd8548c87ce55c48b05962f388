@@ -2,6 +2,103 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_42761a09",
+        "filename": "dotcase/AndroidManifest.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": "Hm, this is probably why the current dotcase application can\u0027t dismiss the full screen notification programmatically. You probably do want android:persistent to remain here though. Moving the process/user ID to systemui can be done as a separate change though.",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_826c1237",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/ScreenStateReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": ":/",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 38
+      },
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_e28706d7",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/ScreenStateService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": "Intent.ACTION_SCREEN_ON",
+      "range": {
+        "startLine": 34,
+        "startChar": 32,
+        "endLine": 34,
+        "endChar": 63
+      },
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_8255f252",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": "Can we clean this up? ScreenStateReceiver and ScreenStateService can both be brought into this class instead. That would probably make it easier to follow what\u0027s going on as well.",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_22675e50",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": "Intent.ACTION_SCREEN_ON",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_62731617",
         "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
         "patchSetId": 2
@@ -13,6 +110,23 @@
       "writtenOn": "2016-07-15T02:35:34Z",
       "side": 1,
       "message": "until we have actual actions for the other gestures, we shouldn\u0027t do this unless DOUBLE_TAP was hit, otherwise gestures wont work again until screen on, then off again",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_c2820ac9",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:43:17Z",
+      "side": 1,
+      "message": "Kind of clunky, we should wire this up to the power HAL tap to wake node instead.",
       "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
