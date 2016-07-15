@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_a2f6ee8e",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-15T01:58:18Z",
+      "side": 1,
+      "message": "list of all sensors: https://gist.github.com/invisiblek/1be9b7ef5482756f4bee4ec2aaa6fa0f\n\ntried with \"HTC Gesture sensor\" and it registers a gesture of \u00271\u0027 when you touch the screen once after turning the screen off (weird, i know) but this \"hTC Gesture_Motion\" doesn\u0027t do anything at all (m8 just works)",
+      "revId": "625ab86fcfc1e7f3cd0a10b54ca592ec1b201244",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
