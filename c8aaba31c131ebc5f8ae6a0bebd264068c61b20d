@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_5d327bf3",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-15T10:33:50Z",
+      "side": 1,
+      "message": "on second thought, do we even need to un-register/register this thing each time? seems redundant/pointless...",
+      "revId": "c8aaba31c131ebc5f8ae6a0bebd264068c61b20d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
