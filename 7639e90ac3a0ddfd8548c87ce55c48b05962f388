@@ -42,6 +42,30 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_dd266bb8",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/ScreenStateReceiver.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-15T10:27:18Z",
+      "side": 1,
+      "message": "all these classes came from Slim\u0027s implementation",
+      "parentUuid": "3fa7e38b_826c1237",
+      "range": {
+        "startLine": 2,
+        "startChar": 22,
+        "endLine": 2,
+        "endChar": 38
+      },
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_e28706d7",
         "filename": "dotcase/src/org/cyanogenmod/dotcase/ScreenStateService.java",
         "patchSetId": 2
@@ -145,6 +169,24 @@
       "writtenOn": "2016-07-15T02:43:17Z",
       "side": 1,
       "message": "Kind of clunky, we should wire this up to the power HAL tap to wake node instead.",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_bd212fa2",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-15T10:27:18Z",
+      "side": 1,
+      "message": "But isn\u0027t that only for tap to wake? Disabling that setting in framework and writing zeros here would give the user the impression they were disabling tap to wake when it actually disables all gestures. Also - I don\u0027t see how to write anything but a 1 or 0 there (not that we couldn\u0027t hax the kernel to do it)",
+      "parentUuid": "3fa7e38b_c2820ac9",
       "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
