@@ -116,6 +116,24 @@
     },
     {
       "key": {
+        "uuid": "3fa7e38b_02c7c214",
+        "filename": "dotcase/src/org/cyanogenmod/dotcase/SensorService.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-15T02:44:14Z",
+      "side": 1,
+      "message": "Err, yeah. I think the flow of the register/unregister listener/screen state needs to be reworked.",
+      "parentUuid": "3fa7e38b_62731617",
+      "revId": "7639e90ac3a0ddfd8548c87ce55c48b05962f388",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_c2820ac9",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 2
