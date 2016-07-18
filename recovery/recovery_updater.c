@@ -206,8 +206,7 @@ Value * VerifySBL1Fn(const char *name, State *state, int argc, Expr *argv[]) {
 
     ret = 0;
     for (i = 0; i < argc; i++) {
-        uiPrintf(state, "Comparing SBL1 version %s to %s\n",
-                sbl1_version[i], current_sbl1_version);
+        uiPrintf(state, "Checking for SBL1 version %s\n", sbl1_version[i]);
         if (strncmp(sbl1_version[i], current_sbl1_version, strlen(sbl1_version[i])) == 0) {
             ret = 1;
             break;
@@ -240,8 +239,7 @@ Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]
 
     ret = 0;
     for (i = 0; i < argc; i++) {
-        uiPrintf(state, "Comparing TZ version %s to %s\n",
-                tz_version[i], current_tz_version);
+        uiPrintf(state, "Checkinf for TZ version %s\n", tz_version[i]);
         if (strncmp(tz_version[i], current_tz_version, strlen(tz_version[i])) == 0) {
             ret = 1;
             break;
