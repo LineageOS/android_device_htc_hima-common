@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_14f375a0",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 9
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-18T23:19:34Z",
+      "side": 1,
+      "message": "i DO want to find out what this should be set to if we ONLY want tap to wake enabled (before we ship this)",
+      "revId": "665ce6fed17f4a43a3de44b8ab4d75099e08cd95",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
