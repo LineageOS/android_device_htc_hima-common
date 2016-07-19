@@ -3,7 +3,7 @@
     package="org.cyanogenmod.dotcase"
     android:versionCode="1"
     android:versionName="1.0"
-    android:sharedUserId="android.uid.systemui">
+    android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
@@ -16,8 +16,7 @@
 
     <application
         android:label="Dotcase"
-        android:persistent="true"
-        android:process="com.android.systemui">
+        android:persistent="true">
 
         <receiver android:name="org.cyanogenmod.dotcase.BootCompletedReceiver">
             <intent-filter>
