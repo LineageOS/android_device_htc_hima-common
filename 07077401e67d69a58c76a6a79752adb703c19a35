@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_d4139db7",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 11
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-07-19T00:28:17Z",
+      "side": 1,
+      "message": "setting 8000 here enables ONLY tap2wake (the rest of the gestures are disabled)\n\nsee my comments in SensorService.java for the values to set for the other gestures (when we do get around to enabling/using them)",
+      "revId": "07077401e67d69a58c76a6a79752adb703c19a35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
