@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3fa7e38b_546c8d35",
+        "filename": "recovery/recovery_updater.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-19T01:04:12Z",
+      "side": 1,
+      "message": "Derp, this must not be null terminated. I guess another way of solving this would have been to initialize the array to {0}.",
+      "revId": "a0bfe0cacb2c11ff9488c75c1cab793125b64a1a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
