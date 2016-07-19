@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3fa7e38b_da38a7d4",
+        "filename": "GestureHandler/src/com/cyanogenmod/settings/device/ScreenStateService.java",
+        "patchSetId": 11
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-19T03:09:24Z",
+      "side": 1,
+      "message": "I still want to merge these extra receivers into the main service...",
+      "revId": "07077401e67d69a58c76a6a79752adb703c19a35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3fa7e38b_d4139db7",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 11
