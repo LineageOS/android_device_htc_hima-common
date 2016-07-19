@@ -16,6 +16,24 @@
       "revId": "07077401e67d69a58c76a6a79752adb703c19a35",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_fa21e3a0",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 11
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-07-19T03:08:11Z",
+      "side": 1,
+      "message": "Can we not unconditionally write this? This forces the touchscreen into IRQ wake mode even if you don\u0027t want double tap active.",
+      "parentUuid": "3fa7e38b_d4139db7",
+      "revId": "07077401e67d69a58c76a6a79752adb703c19a35",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
