@@ -34,6 +34,24 @@
       "revId": "77284dc98741de153bb411a6a3a7d56edb891b1f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3fa7e38b_7d0e308e",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2016-08-01T11:44:08Z",
+      "side": 0,
+      "message": "https://github.com/CyanogenMod/android_device_oneplus_oneplus3/blob/cm-13.0/setup-makefiles.sh#L72-L77",
+      "parentUuid": "3fa7e38b_805aae27",
+      "revId": "77284dc98741de153bb411a6a3a7d56edb891b1f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
