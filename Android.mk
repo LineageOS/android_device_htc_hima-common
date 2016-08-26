@@ -35,12 +35,12 @@ $(WCD9320_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(WCD9320_SYMLINKS)
 
 MODEM_IMAGES := \
-    mba.b00 mba.mdt modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
+    mba.b00 mba.mbn mba.mdt modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
     modem.b06 modem.b07 modem.b08 modem.b09 modem.b10 modem.b11 modem.b12 modem.b13 \
     modem.b14 modem.b15 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 modem.b21 \
     modem.b22 modem.b23 modem.b24 modem.b25 modem.b26 modem.b27 modem.b28 modem.mdt
 
-MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(MODEM_IMAGES)))
+MODEM_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(MODEM_IMAGES)))
 $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "Modem firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -53,7 +53,7 @@ ADSP_IMAGES := \
     adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 adsp.b07 \
     adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 adsp.b14 adsp.b15 adsp.mdt
 
-ADSP_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(ADSP_IMAGES)))
+ADSP_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(ADSP_IMAGES)))
 $(ADSP_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "ADSP firmware link: $@"
 	@mkdir -p $(dir $@)
@@ -68,7 +68,7 @@ CPE_IMAGES := \
     cpe.b12 cpe.b13 cpe.b14 cpe.b15 cpe.b16 cpe.b17 \
     cpe.b18 cpe.b19 cpe.b20 cpe.b21 cpe.b22 cpe.mdt
 
-CPE_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/firmware/,$(notdir $(CPE_IMAGES)))
+CPE_SYMLINKS := $(addprefix $(TARGET_ROOT_OUT)/firmware/image/,$(notdir $(CPE_IMAGES)))
 $(CPE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	@echo "CPE firmware link: $@"
 	@mkdir -p $(dir $@)
