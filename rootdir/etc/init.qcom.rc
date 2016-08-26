@@ -32,7 +32,7 @@ on early-init
     symlink /data/tombstones /tombstones
 
     mkdir /carrier 0770 system system
-    mkdir /firmware 0771 system system
+    chown system system /firmware/image
     mkdir /firmware/adsp 0771 system system
     mkdir /firmware/cpe 0771 system system
     mkdir /firmware/radio 0771 system system
