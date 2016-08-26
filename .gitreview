@@ -1,0 +1,5 @@
+[gerrit]
+host=review.cyanogenmod.org
+port=29418
+project=CyanogenMod/android_device_htc_hima-common
+defaultbranch=cm-14.1
