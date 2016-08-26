@@ -35,6 +35,7 @@ on early-init
     mkdir /firmware 0771 system system
     mkdir /firmware/adsp 0771 system system
     mkdir /firmware/cpe 0771 system system
+    mkdir /firmware/image 0771 system system
     mkdir /firmware/radio 0771 system system
 
 on init
