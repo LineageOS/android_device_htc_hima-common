@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fa4df85_b1e12e2d",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-09T12:54:45Z",
+      "side": 1,
+      "message": "this fixed now?",
+      "revId": "bee72310a47dc7ea097ad278aa78d308b45630f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_71d5f642",
+        "filename": "hima.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-09T12:54:45Z",
+      "side": 1,
+      "message": "this should build now",
+      "revId": "bee72310a47dc7ea097ad278aa78d308b45630f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fa4df85_11ccc2ba",
+        "filename": "hima.mk",
+        "patchSetId": 8
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 3671
+      },
+      "writtenOn": "2016-09-09T12:54:45Z",
+      "side": 1,
+      "message": "pick http://review.cyanogenmod.org/#/c/161236/",
+      "revId": "bee72310a47dc7ea097ad278aa78d308b45630f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
