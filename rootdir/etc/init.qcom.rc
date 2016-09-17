@@ -392,16 +392,19 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
 service netmgrd /system/bin/netmgrd
     class main
     group radio
+    writepid /dev/cpuset/system-background/tasks
 
 service per_mgr /system/bin/pm-service
     class late_start
     user system
     group system net_raw
+    writepid /dev/cpuset/system-background/tasks
 
 service per_proxy /system/bin/pm-proxy
     class late_start
     user system
     group system net_raw
+    writepid /dev/cpuset/system-background/tasks
     disabled
 
 on property:init.svc.per_mgr=running
@@ -426,11 +429,13 @@ service qmuxd /system/bin/qmuxd
     class core
     user root
     group radio audio bluetooth gps nfc qcom_diag
+    writepid /dev/cpuset/system-background/tasks
 
 service qseecomd /system/bin/qseecomd
    class core
    user root
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 service rfs_access /system/bin/rfs_access
    class core
@@ -440,6 +445,7 @@ service rfs_access /system/bin/rfs_access
 service rmt_storage /system/bin/rmt_storage
     class core
     user root
+    writepid /dev/cpuset/system-background/tasks
 
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
@@ -448,11 +454,13 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0660 system system
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 service time_daemon /system/bin/time_daemon
    class late_start
    user root
    group root
+   writepid /dev/cpuset/system-background/tasks
 
 # WPA
 service p2p_supplicant /system/bin/wpa_supplicant \
