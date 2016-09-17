@@ -344,6 +344,8 @@ service audiod /system/bin/audiod
 # Charger
 service charger /charger
     class charger
+    group log
+    seclabel u:r:healthd:s0
 
 service qbcharger /charger -m 1
     disabled
