@@ -29,7 +29,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-   ro.bt.bdaddr_path=/sys/module/htc_bdaddress/parameters/bdaddress
+    qcom.bluetooth.soc=smd \
+    ro.bt.bdaddr_path=/sys/module/htc_bdaddress/parameters/bdaddress
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
