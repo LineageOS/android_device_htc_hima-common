@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ff2e2bb8_227c18ea",
+        "filename": "system_prop.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2016-11-04T16:18:02Z",
+      "side": 1,
+      "message": "This is a qualcomm ID still. This should either not be here, or defaulting to something like none.",
+      "range": {
+        "startLine": 32,
+        "startChar": 23,
+        "endLine": 32,
+        "endChar": 27
+      },
+      "revId": "53ed16af8a314284c225878ffebf9055335bb4eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
