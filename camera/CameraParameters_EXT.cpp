@@ -56,6 +56,7 @@ const char CameraParameters_EXT::KEY_SLOW_MOTION_VERSION[] = "slow-motion-versio
 const char CameraParameters_EXT::KEY_SAVE_MIRROR[] = "save-mirror";
 const char CameraParameters_EXT::DENOISE_ON[] = "denoise-on";
 const char CameraParameters_EXT::DENOISE_OFF[] = "denoise-off";
+const char CameraParameters_EXT::KEY_SMILEINFO_BYFACE_SUPPORTED[] = "smileinfo-byface-supported";
 
 #define ORIENTATION_PORTRAIT 1
 #define ORIENTATION_LANDSCAPE 2

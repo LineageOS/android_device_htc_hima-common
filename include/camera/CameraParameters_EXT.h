@@ -92,6 +92,7 @@ public:
     static const char KEY_SAVE_MIRROR[];
     static const char DENOISE_ON[];
     static const char DENOISE_OFF[];
+    static const char KEY_SMILEINFO_BYFACE_SUPPORTED[];
 
 private:
     CameraParameters *mParams;
