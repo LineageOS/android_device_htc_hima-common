@@ -105,7 +105,7 @@ PRODUCT_PACKAGES += \
 
 # Dot View Case
 PRODUCT_PACKAGES += \
-    Dotcase
+    FlipFlap
 
 # Gesture Handler
 PRODUCT_PACKAGES += \
