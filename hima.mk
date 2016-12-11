@@ -104,7 +104,7 @@ PRODUCT_PACKAGES += \
 
 # Dot View Case
 PRODUCT_PACKAGES += \
-    Dotcase
+    QuickCover
 
 # Gello
 PRODUCT_PACKAGES += \
