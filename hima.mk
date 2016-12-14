@@ -228,6 +228,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
+    libprotobuf-cpp-full \
     librmnetctl
 
 # Sensors
