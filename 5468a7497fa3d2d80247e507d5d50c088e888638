@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5f681702_231c1b11",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 5530
+      },
+      "writtenOn": "2016-12-17T14:11:20Z",
+      "side": 1,
+      "message": "Doesn\u0027t out file need to be named BCM4354?",
+      "revId": "5468a7497fa3d2d80247e507d5d50c088e888638",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
