@@ -16,6 +16,8 @@
 
 #include <string>
 
+//using namespace android;
+
 // GraphicBuffer(uint32_t inWidth, uint32_t inHeight, PixelFormat inFormat,
 //               uint32_t inUsage, std::string requestorName = "<Unknown>");
 extern "C" void _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
@@ -27,4 +29,15 @@ extern "C" void _ZN7android13GraphicBufferC1Ejjij(
   std::string requestorName = "<Unknown>";
   _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
       inWidth, inHeight, inFormat, inUsage, requestorName);
+}
+
+extern "C" void _ZN7android21SurfaceComposerClient17setDisplaySurfaceERKNS_2spINS_7IBinderEEENS1_INS_22IGraphicBufferProducerEEE(
+    uint32_t token, uint32_t bufferProducer);
+//    const sp<IBinder>& token, sp<IGraphicBufferProducer> bufferProducer);
+
+extern "C" void _ZN7android21SurfaceComposerClient17setDisplaySurfaceERKNS_2spINS_7IBinderEEERKNS1_INS_22IGraphicBufferProducerEEE(
+    uint32_t token, uint32_t bufferProducer) {
+//    const sp<IBinder>& token, const sp<IGraphicBufferProducer>& bufferProducer) {
+  _ZN7android21SurfaceComposerClient17setDisplaySurfaceERKNS_2spINS_7IBinderEEENS1_INS_22IGraphicBufferProducerEEE(
+      token, bufferProducer);
 }
