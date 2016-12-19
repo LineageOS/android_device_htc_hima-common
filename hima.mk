@@ -226,7 +226,8 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
-    librmnetctl
+    librmnetctl \
+    libshim_ril
 
 # Sensors
 PRODUCT_COPY_FILES += \
