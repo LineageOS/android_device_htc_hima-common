@@ -38,8 +38,6 @@ on early-init
     mkdir /firmware/cpe 0771 system system
     mkdir /firmware/radio 0771 system system
 
-    symlink /dev/pn544 /dev/pn54x
-
 on init
     export LD_SHIM_LIBS "/system/lib/liblog.so|/system/lib/liblog_htc.so:/system/lib64/liblog.so|/system/lib64/liblog_htc.so:/system/lib/libHtcVteEngine.so|/system/lib/libshim_camera.so:/system/lib64/libril.so|/system/lib64/libshim_ril.so"
 
