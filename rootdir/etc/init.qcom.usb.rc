@@ -23,12 +23,6 @@ on fs
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
 
-on post-fs-data
-    chown system system /sys/class/android_usb/android0/f_mass_storage/lun/file
-    chmod 0660 /sys/class/android_usb/android0/f_mass_storage/lun/file
-    chown system system /sys/class/android_usb/android0/f_rndis/ethaddr
-    chmod 0660 /sys/class/android_usb/android0/f_rndis/ethaddr
-
 on boot
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
     write /sys/class/android_usb/android0/iManufacturer ${ro.product.manufacturer}
@@ -39,7 +33,7 @@ on property:sys.usb.config=mtp
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE1
+    write /sys/class/android_usb/android0/idProduct 0400
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
     write /sys/class/android_usb/android0/bDeviceProtocol 0
@@ -50,7 +44,7 @@ on property:sys.usb.config=mtp
 on property:sys.usb.config=mtp,adb
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE2
+    write /sys/class/android_usb/android0/idProduct 0401
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
     write /sys/class/android_usb/android0/bDeviceProtocol 0
@@ -64,7 +58,7 @@ on property:sys.usb.config=rndis
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE3
+    write /sys/class/android_usb/android0/idProduct 0402
     write /sys/class/android_usb/android0/bDeviceClass 239
     write /sys/class/android_usb/android0/bDeviceSubClass 2
     write /sys/class/android_usb/android0/bDeviceProtocol 1
@@ -75,7 +69,7 @@ on property:sys.usb.config=rndis
 on property:sys.usb.config=rndis,adb
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE4
+    write /sys/class/android_usb/android0/idProduct 0406
     write /sys/class/android_usb/android0/bDeviceClass 239
     write /sys/class/android_usb/android0/bDeviceSubClass 2
     write /sys/class/android_usb/android0/bDeviceProtocol 1
@@ -89,7 +83,7 @@ on property:sys.usb.config=ptp
     stop adbd
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE5
+    write /sys/class/android_usb/android0/idProduct 0400
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
     write /sys/class/android_usb/android0/bDeviceProtocol 0
@@ -100,7 +94,7 @@ on property:sys.usb.config=ptp
 on property:sys.usb.config=ptp,adb
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 0BB4
-    write /sys/class/android_usb/android0/idProduct 4EE6
+    write /sys/class/android_usb/android0/idProduct 0401
     write /sys/class/android_usb/android0/bDeviceClass 0
     write /sys/class/android_usb/android0/bDeviceSubClass 0
     write /sys/class/android_usb/android0/bDeviceProtocol 0
