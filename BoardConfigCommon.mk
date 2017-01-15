@@ -139,7 +139,7 @@ TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # RIL
-BOARD_PROVIDES_LIBRIL := true
+TARGET_RIL_VARIANT := caf
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
