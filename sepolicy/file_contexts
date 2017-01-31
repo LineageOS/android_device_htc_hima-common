@@ -12,6 +12,9 @@
 # Diag
 /dev/htc_diag                   u:object_r:diag_device:s0
 
+# Encryption
+/dev/block/bootdevice/by-name/extra         u:object_r:metadata_block_device:s0
+
 # Gesture
 /sys/devices/virtual/htc_sensorhub/sensor_hub/gesture_motion    u:object_r:sysfs_gesture:s0
 
