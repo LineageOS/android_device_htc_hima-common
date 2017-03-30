@@ -178,6 +178,7 @@ const char CameraParameters::LIGHTFX_HDR[] = "high-dynamic-range";
 
 // HTC settings
 const char CameraParameters::SCENE_MODE_TEXT[] = "text";
+const char CameraParameters::KEY_SMILEINFO_BYFACE_SUPPORTED[] = "smileinfo-byface-supported";
 
 CameraParameters::CameraParameters()
     : CameraParameters_EXT(this), mMap()
