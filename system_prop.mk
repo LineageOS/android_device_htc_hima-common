@@ -42,7 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
     ro.opengles.version=196610 \
     ro.qualcomm.cabl=0 \
-    ro.sf.lcd_density=480
+    ro.sf.lcd_density=420
 
 # Factory Reset Protection
 PRODUCT_PROPERTY_OVERRIDES += \
