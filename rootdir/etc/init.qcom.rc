@@ -364,8 +364,8 @@ on property:sys.qbcharger.enable=false
 
 service cir_fw_update /system/bin/cir_fw_update -u cir.img
     class main
-    user root
-    group root
+    user system
+    group system
     oneshot
 
 service energy-awareness /system/bin/energy-awareness
