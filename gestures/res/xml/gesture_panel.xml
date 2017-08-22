@@ -55,4 +55,10 @@
         android:entries="@array/action_entries"
         android:entryValues="@array/action_values" />
 
+    <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        android:key="touchscreen_gesture_haptic_feedback"
+        android:title="@string/touchscreen_gesture_haptic_feedback"
+        android:summary="@string/touchscreen_gesture_haptic_feedback_summary"
+        android:defaultValue="true" />
+
 </PreferenceScreen>
