@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "71c630a7_77648168",
+        "filename": "gestures/src/com/cyanogenmod/settings/device/HtcGestureService.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 2936
+      },
+      "writtenOn": "2017-08-23T02:34:43Z",
+      "side": 1,
+      "message": "Maybe save a reference to this for the class so you don\u0027t need a binder call every time you do haptic feedback?",
+      "range": {
+        "startLine": 236,
+        "startChar": 14,
+        "endLine": 236,
+        "endChar": 39
+      },
+      "revId": "c55a117b4f429b33875e2acae4aa44ed726c9a68",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
