@@ -153,6 +153,9 @@ bool CameraParameters_EXT::check_flashlight_restriction()
 int CameraParameters_EXT::lookupAttr(/* CameraParameters_EXT::CameraMap const* */
         void *cameraMap, int a3, const char *a4)
 {
+    (void)cameraMap;
+    (void)a3;
+    (void)a4;
     return -2;
 }
 
