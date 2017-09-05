@@ -24,6 +24,9 @@ LOCAL_SHARED_LIBRARIES := \
     libgui \
     libui \
     libutils
+    libbase \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0
 
 LOCAL_MODULE := libshim_camera
 LOCAL_MODULE_TAGS := optional
