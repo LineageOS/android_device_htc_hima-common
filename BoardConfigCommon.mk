@@ -19,9 +19,6 @@ COMMON_PATH := device/htc/hima-common
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
-# Assertions
-TARGET_BOARD_INFO_FILE ?= $(COMMON_PATH)/board-info.txt
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -136,10 +133,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/recovery.fstab
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_hima
-
-# Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 
 # RIL
 TARGET_RIL_VARIANT := caf
