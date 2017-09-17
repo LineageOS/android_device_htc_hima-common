@@ -112,6 +112,9 @@ PRODUCT_PACKAGES += \
     GestureHandler
 
 # GPS
+PRODUCT_PACKAGES += \
+    libshim_gps
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/gps/gps.conf:system/etc/gps.conf
 
