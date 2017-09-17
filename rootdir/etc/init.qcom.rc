@@ -42,7 +42,7 @@ on early-init
     symlink /dev/pn544 /dev/pn54x
 
 on init
-    export LD_SHIM_LIBS "/system/lib/liblog.so|/system/vendor/lib/liblog_htc.so:/system/lib64/liblog.so|/system/vendor/lib64/liblog_htc.so:/system/vendor/lib/libHtcVteEngine.so|/system/vendor/lib/libshim_camera.so:/system/vendor/lib64/libril.so|/system/vendor/lib64/libshim_ril.so"
+    export LD_SHIM_LIBS "/system/lib/liblog.so|/system/vendor/lib/liblog_htc.so:/system/lib64/liblog.so|/system/vendor/lib64/liblog_htc.so:/system/vendor/lib/libHtcVteEngine.so|/system/vendor/lib/libshim_camera.so:/system/vendor/lib64/libril.so|/system/vendor/lib64/libshim_ril.so:/system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so:/system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so"
 
     chmod 0644 /proc/cmdline
 
