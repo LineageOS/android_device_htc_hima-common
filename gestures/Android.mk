@@ -10,7 +10,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     android-support-v7-preference \
     android-support-v7-appcompat \
     android-support-v14-preference \
-    org.cyanogenmod.platform.internal
+    org.lineageos.platform.internal
 
 LOCAL_AAPT_FLAGS := --auto-add-overlay \
     --extra-packages android.support.v7.preference:android.support.v14.preference:android.support.v17.preference:android.support.v7.appcompat:android.support.v7.recyclerview

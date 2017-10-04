@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.lineageos.settings.device;
 
 import android.app.Service;
 import android.content.ActivityNotFoundException;
@@ -41,7 +41,7 @@ import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 
-import cyanogenmod.providers.CMSettings;
+import lineageos.providers.LineageSettings;
 
 public class HtcGestureService extends Service {
 
@@ -237,8 +237,8 @@ public class HtcGestureService extends Service {
         }
 
         if (mAudioManager.getRingerMode() != AudioManager.RINGER_MODE_SILENT) {
-            final boolean enabled = CMSettings.System.getInt(mContext.getContentResolver(),
-                    CMSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
+            final boolean enabled = LineageSettings.System.getInt(mContext.getContentResolver(),
+                    LineageSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
             if (enabled) {
                 mVibrator.vibrate(100);
             }
