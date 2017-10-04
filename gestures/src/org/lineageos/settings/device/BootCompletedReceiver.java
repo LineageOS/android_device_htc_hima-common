@@ -1,5 +1,6 @@
 /*
- * Copyright (c) 2016 The CyanogenMod Project
+ * Copyright (C) 2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -18,7 +19,7 @@
  *
  */
 
-package com.cyanogenmod.settings.device;
+package org.lineageos.settings.device;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

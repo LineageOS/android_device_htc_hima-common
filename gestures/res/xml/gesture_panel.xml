@@ -61,7 +61,7 @@
         android:key="extra_settings_key"
         android:title="@string/touchscreen_gesture_extras" >
 
-        <cyanogenmod.preference.CMSystemSettingSwitchPreference
+        <lineageos.preference.LineageSystemSettingSwitchPreference
             android:key="touchscreen_gesture_haptic_feedback"
             android:title="@string/touchscreen_gesture_haptic_feedback"
             android:summary="@string/touchscreen_gesture_haptic_feedback_summary"

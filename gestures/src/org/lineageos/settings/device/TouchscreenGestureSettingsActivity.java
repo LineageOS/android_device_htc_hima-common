@@ -15,15 +15,20 @@
  * limitations under the License.
  */
 
-package com.cyanogenmod.settings.device;
+package org.lineageos.settings.device;
 
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v14.preference.PreferenceFragment;
 
-public class TouchscreenGestureSettingsFragment extends PreferenceFragment {
+import com.android.settingslib.drawer.SettingsDrawerActivity;
 
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.gesture_panel);
+public class TouchscreenGestureSettingsActivity extends SettingsDrawerActivity {
+
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+                new TouchscreenGestureSettingsFragment()).commit();
     }
 }
