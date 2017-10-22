@@ -749,6 +749,10 @@ vendor/lib64/libmm-qdcm.so
 vendor/lib/libmm-als.so
 vendor/lib/libmm-qdcm.so
 
+# Protobuf
+vendor/lib64/libprotobuf-cpp-fulm.so
+vendor/lib64/libprotobuf-cpp-litm.so
+
 # QMI
 bin/irsc_util:vendor/bin/irsc_util
 vendor/lib64/libdiag.so
