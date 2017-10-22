@@ -1,5 +1,5 @@
 # ADSP
-bin/adsprpcd
+bin/adsprpcd:vendor/bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
@@ -14,57 +14,57 @@ etc/Headset_cal.acdb
 etc/Speaker_cal.acdb
 
 # Audio amplifier
-etc/tfa/fm.drc
-etc/tfa/fm.eq
-etc/tfa/fm_l.drc
-etc/tfa/fm_l.eq
-etc/tfa/fm_l.preset
-etc/tfa/fm.preset
-etc/tfa/playback.drc
-etc/tfa/playback.eq
-etc/tfa/playback_l.drc
-etc/tfa/playback_l.eq
-etc/tfa/playback_l.preset
-etc/tfa/playbackMFG.config
-etc/tfa/playbackMFG.drc
-etc/tfa/playbackMFG.eq
-etc/tfa/playbackMFG_l.config
-etc/tfa/playbackMFG_l.drc
-etc/tfa/playbackMFG_l.eq
-etc/tfa/playbackMFG_l.preset
-etc/tfa/playbackMFG.preset
-etc/tfa/playback.preset
-etc/tfa/playbackwoofer.drc
-etc/tfa/playbackwoofer.eq
-etc/tfa/playbackwoofer_l.drc
-etc/tfa/playbackwoofer_l.eq
-etc/tfa/playbackwoofer_l.preset
-etc/tfa/playbackwoofer.preset
-etc/tfa/Rec_Video.drc
-etc/tfa/Rec_Video.eq
-etc/tfa/Rec_Video_l.drc
-etc/tfa/Rec_Video_l.eq
-etc/tfa/Rec_Video_l.preset
-etc/tfa/Rec_Video.preset
-etc/tfa/tfa9895.config
-etc/tfa/tfa9895_l.speaker
-etc/tfa/tfa9895MFG.patch
-etc/tfa/tfa9895.patch
-etc/tfa/tfa9895.speaker
-etc/tfa/voice.drc
-etc/tfa/voice.eq
-etc/tfa/voice_l.drc
-etc/tfa/voice_l.eq
-etc/tfa/voice_l.preset
-etc/tfa/voice.preset
-etc/tfa/voiceWB.eq
-etc/tfa/voiceWB_l.eq
-etc/tfa/voip.drc
-etc/tfa/voip.eq
-etc/tfa/voip_l.drc
-etc/tfa/voip_l.eq
-etc/tfa/voip_l.preset
-etc/tfa/voip.preset
+etc/tfa/fm.drc:vendor/etc/tfa/fm.drc
+etc/tfa/fm.eq:vendor/etc/tfa/fm.eq
+etc/tfa/fm_l.drc:vendor/etc/tfa/fm_l.drc
+etc/tfa/fm_l.eq:vendor/etc/tfa/fm_l.eq
+etc/tfa/fm_l.preset:vendor/etc/tfa/fm_l.preset
+etc/tfa/fm.preset:vendor/etc/tfa/fm.preset
+etc/tfa/playback.drc:vendor/etc/tfa/playback.drc
+etc/tfa/playback.eq:vendor/etc/tfa/playback.eq
+etc/tfa/playback_l.drc:vendor/etc/tfa/playback_l.drc
+etc/tfa/playback_l.eq:vendor/etc/tfa/playback_l.eq
+etc/tfa/playback_l.preset:vendor/etc/tfa/playback_l.preset
+etc/tfa/playbackMFG.config:vendor/etc/tfa/playbackMFG.config
+etc/tfa/playbackMFG.drc:vendor/etc/tfa/playbackMFG.drc
+etc/tfa/playbackMFG.eq:vendor/etc/tfa/playbackMFG.eq
+etc/tfa/playbackMFG_l.config:vendor/etc/tfa/playbackMFG_l.config
+etc/tfa/playbackMFG_l.drc:vendor/etc/tfa/playbackMFG_l.drc
+etc/tfa/playbackMFG_l.eq:vendor/etc/tfa/playbackMFG_l.eq
+etc/tfa/playbackMFG_l.preset:vendor/etc/tfa/playbackMFG_l.preset
+etc/tfa/playbackMFG.preset:vendor/etc/tfa/playbackMFG.preset
+etc/tfa/playback.preset:vendor/etc/tfa/playback.preset
+etc/tfa/playbackwoofer.drc:vendor/etc/tfa/playbackwoofer.drc
+etc/tfa/playbackwoofer.eq:vendor/etc/tfa/playbackwoofer.eq
+etc/tfa/playbackwoofer_l.drc:vendor/etc/tfa/playbackwoofer_l.drc
+etc/tfa/playbackwoofer_l.eq:vendor/etc/tfa/playbackwoofer_l.eq
+etc/tfa/playbackwoofer_l.preset:vendor/etc/tfa/playbackwoofer_l.preset
+etc/tfa/playbackwoofer.preset:vendor/etc/tfa/playbackwoofer.preset
+etc/tfa/Rec_Video.drc:vendor/etc/tfa/Rec_Video.drc
+etc/tfa/Rec_Video.eq:vendor/etc/tfa/Rec_Video.eq
+etc/tfa/Rec_Video_l.drc:vendor/etc/tfa/Rec_Video_l.drc
+etc/tfa/Rec_Video_l.eq:vendor/etc/tfa/Rec_Video_l.eq
+etc/tfa/Rec_Video_l.preset:vendor/etc/tfa/Rec_Video_l.preset
+etc/tfa/Rec_Video.preset:vendor/etc/tfa/Rec_Video.preset
+etc/tfa/tfa9895.config:vendor/etc/tfa/tfa9895.config
+etc/tfa/tfa9895_l.speaker:vendor/etc/tfa/tfa9895_l.speaker
+etc/tfa/tfa9895MFG.patch:vendor/etc/tfa/tfa9895MFG.patch
+etc/tfa/tfa9895.patch:vendor/etc/tfa/tfa9895.patch
+etc/tfa/tfa9895.speaker:vendor/etc/tfa/tfa9895.speaker
+etc/tfa/voice.drc:vendor/etc/tfa/voice.drc
+etc/tfa/voice.eq:vendor/etc/tfa/voice.eq
+etc/tfa/voice_l.drc:vendor/etc/tfa/voice_l.drc
+etc/tfa/voice_l.eq:vendor/etc/tfa/voice_l.eq
+etc/tfa/voice_l.preset:vendor/etc/tfa/voice_l.preset
+etc/tfa/voice.preset:vendor/etc/tfa/voice.preset
+etc/tfa/voiceWB.eq:vendor/etc/tfa/voiceWB.eq
+etc/tfa/voiceWB_l.eq:vendor/etc/tfa/voiceWB_l.eq
+etc/tfa/voip.drc:vendor/etc/tfa/voip.drc
+etc/tfa/voip.eq:vendor/etc/tfa/voip.eq
+etc/tfa/voip_l.drc:vendor/etc/tfa/voip_l.drc
+etc/tfa/voip_l.eq:vendor/etc/tfa/voip_l.eq
+etc/tfa/voip_l.preset:vendor/etc/tfa/voip_l.preset
+etc/tfa/voip.preset:vendor/etc/tfa/voip.preset
 
 # Audio libraries
 vendor/lib64/libacdb-fts.so
@@ -87,21 +87,21 @@ vendor/lib/soundfx/libswdap.so
 etc/firmware/BCM4356A2_001.003.015.0100.0102.hcd:etc/firmware/BCM4354A2_001.003.015.0100.0102.hcd
 
 # Camera
-bin/mm-qcamera-daemon
-lib/hw/camera.msm8994.so
-lib/libawb_calibration.so
-lib/libBeautyChat.so
-lib/libc2dcolorconvertgpu.so
-lib/libcameraface.so
-lib/libcamerapp.so
-lib/libFaceRetrieve.so
-lib/libHtcVteEngine.so
-lib/libhtcsecure.so
-lib/libmmcamera_interface.so
-lib/libmmjpeg_interface.so
-lib/libmm-qcamera.so
-lib/libqomx_core.so
-lib/libscaler.so
+bin/mm-qcamera-daemon:vendor/bin/mm-qcamera-daemon
+lib/hw/camera.msm8994.so:vendor/lib/hw/camera.msm8994.so
+lib/libawb_calibration.so:vendor/lib/libawb_calibration.so
+lib/libBeautyChat.so:vendor/lib/libBeautyChat.so
+lib/libc2dcolorconvertgpu.so:vendor/lib/libc2dcolorconvertgpu.so
+lib/libcameraface.so:vendor/lib/libcameraface.so
+lib/libcamerapp.so:vendor/lib/libcamerapp.so
+lib/libFaceRetrieve.so:vendor/lib/libFaceRetrieve.so
+lib/libHtcVteEngine.so:vendor/lib/libHtcVteEngine.so
+lib/libhtcsecure.so:vendor/lib/libhtcsecure.so
+lib/libmmcamera_interface.so:vendor/lib/libmmcamera_interface.so
+lib/libmmjpeg_interface.so:vendor/lib/libmmjpeg_interface.so
+lib/libmm-qcamera.so:vendor/lib/libmm-qcamera.so
+lib/libqomx_core.so:vendor/lib/libqomx_core.so
+lib/libscaler.so:vendor/lib/libscaler.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libjpegdhw.so
@@ -551,12 +551,12 @@ vendor/lib/libchromatix_vd6869_snapshot.so
 
 # Camera firmware
 etc/firmware/alIAF_InData_4M2M
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/ILP0100_IPM_Code_out.bin
 etc/firmware/ILP0100_IPM_Data_out.bin
 etc/firmware/lscbuffer_rev2.bin
@@ -588,7 +588,7 @@ vendor/lib/libmmcamera_t4ka7.so
 vendor/lib/libmmcamera_vd6869.so
 
 # DRM
-bin/qseecomd
+bin/qseecomd:vendor/bin/qseecomd
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
 vendor/lib64/libQSEEComAPI.so
@@ -597,59 +597,59 @@ vendor/lib64/libssd.so
 vendor/lib/libQSEEComAPI.so
 
 # DRM firmware
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.mdt
-etc/firmware/dxcprm.b00
-etc/firmware/dxcprm.b01
-etc/firmware/dxcprm.b02
-etc/firmware/dxcprm.b03
-etc/firmware/dxcprm.mdt
-etc/firmware/dxhdcp2.b00
-etc/firmware/dxhdcp2.b01
-etc/firmware/dxhdcp2.b02
-etc/firmware/dxhdcp2.b03
-etc/firmware/dxhdcp2.mdt
-etc/firmware/htc_drmprov.b00
-etc/firmware/htc_drmprov.b01
-etc/firmware/htc_drmprov.b02
-etc/firmware/htc_drmprov.b03
-etc/firmware/htc_drmprov.mdt
-etc/firmware/mc_v2.b00
-etc/firmware/mc_v2.b01
-etc/firmware/mc_v2.b02
-etc/firmware/mc_v2.b03
-etc/firmware/mc_v2.mdt
-etc/firmware/securemm.b00
-etc/firmware/securemm.b01
-etc/firmware/securemm.b02
-etc/firmware/securemm.b03
-etc/firmware/securemm.mdt
-etc/firmware/widevine.b00
-etc/firmware/widevine.b01
-etc/firmware/widevine.b02
-etc/firmware/widevine.b03
-etc/firmware/widevine.mdt
+etc/firmware/cmnlib.b00:vendor/firmware/cmnlib.b00
+etc/firmware/cmnlib.b01:vendor/firmware/cmnlib.b01
+etc/firmware/cmnlib.b02:vendor/firmware/cmnlib.b02
+etc/firmware/cmnlib.b03:vendor/firmware/cmnlib.b03
+etc/firmware/cmnlib.mdt:vendor/firmware/cmnlib.mdt
+etc/firmware/dxcprm.b00:vendor/etc/firmware/dxcprm.b00
+etc/firmware/dxcprm.b01:vendor/etc/firmware/dxcprm.b01
+etc/firmware/dxcprm.b02:vendor/etc/firmware/dxcprm.b02
+etc/firmware/dxcprm.b03:vendor/etc/firmware/dxcprm.b03
+etc/firmware/dxcprm.mdt:vendor/etc/firmware/dxcprm.mdt
+etc/firmware/dxhdcp2.b00:vendor/firmware/dxhdcp2.b00
+etc/firmware/dxhdcp2.b01:vendor/firmware/dxhdcp2.b01
+etc/firmware/dxhdcp2.b02:vendor/firmware/dxhdcp2.b02
+etc/firmware/dxhdcp2.b03:vendor/firmware/dxhdcp2.b03
+etc/firmware/dxhdcp2.mdt:vendor/firmware/dxhdcp2.mdt
+etc/firmware/htc_drmprov.b00:vendor/firmware/htc_drmprov.b00
+etc/firmware/htc_drmprov.b01:vendor/firmware/htc_drmprov.b01
+etc/firmware/htc_drmprov.b02:vendor/firmware/htc_drmprov.b02
+etc/firmware/htc_drmprov.b03:vendor/firmware/htc_drmprov.b03
+etc/firmware/htc_drmprov.mdt:vendor/firmware/htc_drmprov.mdt
+etc/firmware/mc_v2.b00:vendor/etc/firmware/mc_v2.b00
+etc/firmware/mc_v2.b01:vendor/etc/firmware/mc_v2.b01
+etc/firmware/mc_v2.b02:vendor/etc/firmware/mc_v2.b02
+etc/firmware/mc_v2.b03:vendor/etc/firmware/mc_v2.b03
+etc/firmware/mc_v2.mdt:vendor/etc/firmware/mc_v2.mdt
+etc/firmware/securemm.b00:vendor/etc/firmware/securemm.b00
+etc/firmware/securemm.b01:vendor/etc/firmware/securemm.b01
+etc/firmware/securemm.b02:vendor/etc/firmware/securemm.b02
+etc/firmware/securemm.b03:vendor/etc/firmware/securemm.b03
+etc/firmware/securemm.mdt:vendor/etc/firmware/securemm.mdt
+etc/firmware/widevine.b00:vendor/firmware/widevine.b00
+etc/firmware/widevine.b01:vendor/firmware/widevine.b01
+etc/firmware/widevine.b02:vendor/firmware/widevine.b02
+etc/firmware/widevine.b03:vendor/firmware/widevine.b03
+etc/firmware/widevine.mdt:vendor/firmware/widevine.mdt
 
 # GPS
-lib64/hw/gps.default.so
-lib64/libgps.utils.so
-lib64/libloc_api_v02.so
-lib64/libloc_core.so
-lib64/libloc_ds_api.so
-lib64/libloc_eng.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib/libgeofence.so
-vendor/lib/libizat_core.so
-vendor/lib/liblbs_core.so
+lib64/hw/gps.default.so:vendor/lib64/hw/gps.default.so
+lib64/libgps.utils.so:vendor/lib64/libgps.utils.so
+lib64/libloc_api_v02.so:vendor/lib64/libloc_api_v02.so
+lib64/libloc_core.so:vendor/lib64/libloc_core.so
+lib64/libloc_ds_api.so:vendor/lib64/libloc_ds_api.so
+lib64/libloc_eng.so:vendor/lib64/libloc_eng.so
+vendor/lib64/libgeofence.so:vendor/vendor/lib64/libgeofence.so
+vendor/lib64/libizat_core.so:vendor/vendor/lib64/libizat_core.so
+vendor/lib64/liblbs_core.so:vendor/vendor/lib64/liblbs_core.so
+vendor/lib/libgeofence.so:vendor/vendor/lib/libgeofence.so
+vendor/lib/libizat_core.so:vendor/vendor/lib/libizat_core.so
+vendor/lib/liblbs_core.so:vendor/vendor/lib/liblbs_core.so
 
 # Graphics
-etc/firmware/a420_pfp.fw
-etc/firmware/a420_pm4.fw
+etc/firmware/a420_pfp.fw:vendor/firmware/a420_pfp.fw
+etc/firmware/a420_pm4.fw:vendor/firmware/a420_pm4.fw
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -693,13 +693,13 @@ vendor/lib64/libscale.so
 vendor/lib64/libuiblur.so
 
 # IPA
-bin/ipacm-diag
+bin/ipacm-diag:vendor/bin/ipacm-diag
 
 # IR
-bin/cir_fw_update
-etc/cir.img
-lib/hw/consumerir.default.so
-lib64/hw/consumerir.default.so
+bin/cir_fw_update:vendor/bin/cir_fw_update
+etc/cir.img:vendor/etc/cir.img
+lib/hw/consumerir.default.so:vendor/lib/hw/consumerir.default.so
+lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.default.so
 
 # Keymaster
 vendor/firmware/keymaster.b00:vendor/firmware/keymaster/keymaster.b00
@@ -719,27 +719,27 @@ vendor/lib/libOmxQcelp13Dec.so
 vendor/lib/libOmxWmaDec.so
 
 # Media firmware
-etc/firmware/venus.b00
-etc/firmware/venus.b01
-etc/firmware/venus.b02
-etc/firmware/venus.b03
-etc/firmware/venus.b04
-etc/firmware/venus.mbn
-etc/firmware/venus.mdt
+etc/firmware/venus.b00:vendor/firmware/venus.b00
+etc/firmware/venus.b01:vendor/firmware/venus.b01
+etc/firmware/venus.b02:vendor/firmware/venus.b02
+etc/firmware/venus.b03:vendor/firmware/venus.b03
+etc/firmware/venus.b04:vendor/firmware/venus.b04
+etc/firmware/venus.mbn:vendor/firmware/venus.mbn
+etc/firmware/venus.mdt:vendor/firmware/venus.mdt
 
 # NFC
 vendor/firmware/libpn547_fw.so
 
 # Perf
-bin/energy-awareness
-bin/msm_irqbalance
+bin/energy-awareness:vendor/bin/energy-awareness
+bin/msm_irqbalance:vendor/bin/msm_irqbalance
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
 # Peripheral manager
-bin/pm-proxy
-bin/pm-service
+bin/pm-proxy:vendor/bin/pm-proxy
+bin/pm-service:vendor/bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
@@ -750,7 +750,7 @@ vendor/lib/libmm-als.so
 vendor/lib/libmm-qdcm.so
 
 # QMI
-bin/irsc_util
+bin/irsc_util:vendor/bin/irsc_util
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -785,11 +785,11 @@ vendor/lib/libqmi.so
 vendor/lib/libsmemlog.so
 
 # Radio
-bin/netmgrd
-bin/qmuxd
-bin/radish
-bin/rmt_storage
-lib64/libhtc_rilhook.so
+bin/netmgrd:vendor/bin/netmgrd
+bin/qmuxd:vendor/bin/qmuxd
+bin/radish:vendor/bin/radish
+bin/rmt_storage:vendor/bin/rmt_storage
+lib64/libhtc_rilhook.so:vendor/lib64/libhtc_rilhook.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
@@ -805,7 +805,7 @@ vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
 
 # Sensors
-lib64/hw/sensors.msm8994.so
+lib64/hw/sensors.msm8994.so:vendor/lib64/hw/sensors.msm8994.so
 
 # Thermal
 vendor/bin/thermal-engine
@@ -815,7 +815,7 @@ vendor/lib/libthermalclient.so
 
 # Time services
 -app/TimeService/TimeService.apk
-bin/time_daemon
+bin/time_daemon:vendor/bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 -vendor/lib64/libTimeService.so
 -vendor/lib/libtime_genoff.so
@@ -827,7 +827,7 @@ etc/firmware/fw_bcm4356_apsta.bin
 etc/firmware/fw_bcm4356.bin
 
 # Widevine
-lib/libdrmdecrypt.so
+lib/libdrmdecrypt.so:vendor/lib/libdrmdecrypt.so
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/libwvdrm_L1.so
 vendor/lib/libwvm.so
