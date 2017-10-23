@@ -124,12 +124,12 @@ PRODUCT_PACKAGES += \
     liboverlay
 
 # Dot View Case
-PRODUCT_PACKAGES += \
-    Dotcase
-
+#PRODUCT_PACKAGES += \
+#    Dotcase
+#
 # Gesture Handler
-PRODUCT_PACKAGES += \
-    GestureHandler
+#PRODUCT_PACKAGES += \
+#    GestureHandler
 
 # GPS
 PRODUCT_PACKAGES += \
