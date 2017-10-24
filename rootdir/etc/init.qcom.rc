@@ -340,6 +340,10 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
 
+    # Set vibrator intensity permissions
+    chown system system /sys/devices/virtual/timed_output/vibrator/voltage_level
+    chmod 0644 /sys/devices/virtual/timed_output/vibrator/voltage_level
+
 # Services start here
 
 service adsprpcd /system/vendor/bin/adsprpcd
