@@ -30,7 +30,10 @@ using android::hardware::light::V2_0::ILight;
 using android::hardware::light::V2_0::implementation::Light;
 
 const static std::string kBacklightPath = "/sys/class/leds/lcd-backlight/brightness";
-const static std::string kIndicatorPath = "/sys/class/leds/indicator/ModeRGB";
+const static std::string kAmberLedPath = "/sys/class/leds/amber/brightness";
+const static std::string kGreenLedPath = "/sys/class/leds/green/brightness";
+const static std::string kAmberBlinkPath = "/sys/class/leds/amber/blink";
+const static std::string kGreenBlinkPath = "/sys/class/leds/green/blink";
 
 int main() {
     std::ofstream backlight(kBacklightPath);
@@ -40,14 +43,39 @@ int main() {
         return -error;
     }
 
-    std::ofstream indicator(kIndicatorPath);
-    if (!indicator) {
+    std::ofstream amberLed(kAmberLedPath);
+    if (!amberLed) {
         int error = errno;
-        ALOGE("Failed to open %s (%d): %s", kIndicatorPath.c_str(), error, strerror(error));
+        ALOGE("Failed to open %s (%d): %s", kAmberLedPath.c_str(), error, strerror(error));
         return -error;
     }
 
-    android::sp<ILight> service = new Light(std::move(backlight), std::move(indicator));
+    std::ofstream greenLed(kGreenLedPath);
+    if (!greenLed) {
+        int error = errno;
+        ALOGE("Failed to open %s (%d): %s", kGreenLedPath.c_str(), error, strerror(error));
+        return -error;
+    }
+
+    std::ofstream amberBlink(kAmberBlinkPath);
+    if (!amberBlink) {
+        int error = errno;
+        ALOGE("Failed to open %s (%d): %s", kAmberBlinkPath.c_str(), error, strerror(error));
+        return -error;
+    }
+
+    std::ofstream greenBlink(kGreenBlinkPath);
+    if (!greenBlink) {
+        int error = errno;
+        ALOGE("Failed to open %s (%d): %s", kGreenBlinkPath.c_str(), error, strerror(error));
+        return -error;
+    }
+
+    android::sp<ILight> service = new Light(std::move(backlight),
+                                            std::move(amberLed),
+                                            std::move(greenLed),
+                                            std::move(amberBlink),
+                                            std::move(greenBlink));
 
     configureRpcThreadpool(1, true);
 
