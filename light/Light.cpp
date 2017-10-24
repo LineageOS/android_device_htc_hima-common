@@ -46,9 +46,32 @@ static constexpr uint32_t MODE_BLINK = 0x2;
 static constexpr uint32_t MODE_SHIFT = 24;
 static constexpr uint32_t MODE_MASK = 0x0f000000;
 
-Light::Light(std::ofstream&& backlight, std::ofstream&& indicator) :
+enum {
+    LED_AMBER,
+    LED_GREEN,
+    LED_BLANK,
+};
+
+enum {
+    PULSE_LENGTH_ALWAYS_ON = 1,
+    PULSE_LENGTH_NORMAL = 2,
+    PULSE_LENGTH_LONG = 3,
+};
+
+enum {
+    BLINK_MODE_OFF = 0,
+    BLINK_MODE_NORMAL = 1,
+    BLINK_MODE_LONG = 4,
+};
+
+Light::Light(std::ofstream&& backlight, std::ofstream&& amber_led,
+             std::ofstream&& green_led, std::ofstream&& amber_blink,
+             std::ofstream&& green_blink) :
     mBacklight(std::move(backlight)),
-    mIndicator(std::move(indicator)) {
+    mAmberLed(std::move(amber_led)),
+    mGreenLed(std::move(green_led)),
+    mAmberBlink(std::move(amber_blink)),
+    mGreenBlink(std::move(green_blink)) {
     auto attnFn(std::bind(&Light::setAttentionLight, this, std::placeholders::_1));
     auto backlightFn(std::bind(&Light::setBacklight, this, std::placeholders::_1));
     auto batteryFn(std::bind(&Light::setBatteryLight, this, std::placeholders::_1));
@@ -111,7 +134,9 @@ void Light::setNotificationLight(const LightState& state) {
 }
 
 void Light::setSpeakerBatteryLightLocked() {
-    if (isLit(mNotificationState)) {
+    if (isLit(mBatteryState) && isLit(mNotificationState)) {
+        setSpeakerLightLockedDual(mBatteryState, mNotificationState);
+    } else if (isLit(mNotificationState)) {
         setSpeakerLightLocked(mNotificationState);
     } else if (isLit(mAttentionState)) {
         setSpeakerLightLocked(mAttentionState);
@@ -119,41 +144,112 @@ void Light::setSpeakerBatteryLightLocked() {
         setSpeakerLightLocked(mBatteryState);
     } else {
         /* Lights off */
-        mIndicator << 0 << std::endl;
+        mAmberLed << 0 << std::endl;
+        mGreenLed << 0 << std::endl;
+        mAmberBlink << 0 << std::endl;
+        mGreenBlink << 0 << std::endl;
     }
 }
 
 void Light::setSpeakerLightLocked(const LightState& state) {
-    uint32_t color;
-    uint32_t indicator = 0x00000000;
+    uint32_t colorRGB = state.color & 0xFFFFFF;
+    uint32_t color = LED_BLANK;
+    uint32_t blinkMode = BLINK_MODE_OFF;
+    LightState localState = state;
 
-    color = state.color & 0x00ffffff;
+    if ((colorRGB >> 8) & 0xFF) color = LED_GREEN;
+    if ((colorRGB >> 16) & 0xFF) color = LED_AMBER;
+    if (((colorRGB >> 8) & 0xFF) > ((colorRGB >> 16) & 0xFF)) color = LED_GREEN;
 
-    /* Set color */
-    if ((color & 0x00ff0000) && (color & 0x0000ff00)) {
-        /* amber */
-        indicator |= 0x00ffff00;
-    } else if (color & 0x00ff0000) {
-        /* red */
-        indicator |= 0x00ff0000;
-    } else if (color & 0x0000ff00) {
-        /* green */
-        indicator |= 0x0000ff00;
-    } else if (color & 0x000000ff) {
-        /* LED not capable of blue, use green */
-        indicator |= 0x0000ff00;
+    if (localState.flashMode == Flash::TIMED)
+    {
+        // make sure to blink by default regardless of timing
+        blinkMode = BLINK_MODE_NORMAL;
     }
 
-    /* Set blink */
-    if (isLit(state) && state.flashMode == Flash::TIMED) {
-        indicator |= (MODE_BLINK << MODE_SHIFT);
-    } else if (isLit(state) && state.flashMode == Flash::NONE) {
-        indicator |= (MODE_ON << MODE_SHIFT);
-    } else if (!isLit(state)) {
-        indicator &= (~MODE_MASK);
+    switch (localState.flashOnMs) {
+        case PULSE_LENGTH_ALWAYS_ON:
+            localState.flashMode = Flash::NONE;
+            break;
+        case PULSE_LENGTH_NORMAL:
+            blinkMode = BLINK_MODE_NORMAL;
+            break;
+        case PULSE_LENGTH_LONG:
+            blinkMode = BLINK_MODE_LONG;
+            break;
     }
 
-    mIndicator << std::hex << indicator << std::endl;
+    switch (localState.flashMode) {
+        case Flash::TIMED:
+            switch (color) {
+                case LED_AMBER:
+                    mAmberLed << 1;
+                    mGreenLed << 0;
+                    mAmberBlink << blinkMode;
+                    mGreenBlink << 0;
+                    break;
+                case LED_GREEN:
+                    mAmberLed << 0;
+                    mGreenLed << 1;
+                    mAmberBlink << 0;
+                    mGreenBlink << blinkMode;
+                    break;
+                case LED_BLANK:
+                    mAmberBlink << 0;
+                    mGreenBlink << 0;
+                    break;
+                default:
+                    break;
+            }
+            break;
+        case Flash::NONE:
+            switch (color) {
+                case LED_AMBER:
+                    mAmberLed << 1;
+                    mGreenLed << 0;
+                    mAmberBlink << 0;
+                    mGreenBlink << 0;
+                    break;
+                case LED_GREEN:
+                    mAmberLed << 0;
+                    mGreenLed << 1;
+                    mAmberBlink << 0;
+                    mGreenBlink << 0;
+                    break;
+                case LED_BLANK:
+                    mAmberLed << 0;
+                    mGreenLed << 0;
+                    break;
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+void Light::setSpeakerLightLockedDual(const LightState& batteryState,
+                                      const LightState& notificationState) {
+    uint32_t bcolorRGB = batteryState.color & 0xFFFFFF;
+    uint32_t bcolor = LED_BLANK;
+    uint32_t blinkMode = BLINK_MODE_LONG;
+
+    if ((bcolorRGB >> 8) & 0xFF) bcolor = LED_GREEN;
+    if ((bcolorRGB >> 16) & 0xFF) bcolor = LED_AMBER;
+
+    switch (bcolor) {
+        case LED_AMBER:
+            mAmberBlink << 1;
+            mGreenLed << 1;
+            mAmberBlink << 4;
+            break;
+        case LED_GREEN:
+            mGreenBlink << 1;
+            mAmberLed << 1;
+            mGreenBlink << 4;
+            break;
+        default:
+            break;
+    }
 }
 
 } // namespace implementation
