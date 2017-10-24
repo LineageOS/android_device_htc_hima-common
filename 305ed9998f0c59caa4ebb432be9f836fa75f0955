@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9381eaf1_ba944a0d",
+        "filename": "light/Light.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-10-24T18:49:29Z",
+      "side": 1,
+      "message": "Why did you create this local variable?",
+      "range": {
+        "startLine": 152,
+        "startChar": 4,
+        "endLine": 152,
+        "endChar": 34
+      },
+      "revId": "305ed9998f0c59caa4ebb432be9f836fa75f0955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
