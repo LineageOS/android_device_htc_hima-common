@@ -92,7 +92,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib64/libhtc_rilhook.so \
+    rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
     ro.ril.telephony.mqanelements=5
 
 PRODUCT_PROPERTY_OVERRIDES += \
