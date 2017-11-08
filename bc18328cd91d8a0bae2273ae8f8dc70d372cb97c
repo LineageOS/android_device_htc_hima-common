@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c97e90a6_da84eea0",
+        "filename": "overlay/packages/apps/FlipFlap/res/values/config.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-08T20:10:56Z",
+      "side": 1,
+      "message": "This overlay is old, needs to be updated.",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 105
+      },
+      "revId": "bc18328cd91d8a0bae2273ae8f8dc70d372cb97c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
