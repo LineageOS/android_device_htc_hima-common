@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "e837f66d_7dc8f3a1",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5530
+      },
+      "writtenOn": "2017-11-08T17:19:43Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "1624188a_f1afef1f",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 227,
+        "endChar": 19
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fb8b4452_b5cc43d6",
         "filename": "hima.mk",
         "patchSetId": 1
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "0750f228_7c2ac48b",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5530
+      },
+      "writtenOn": "2017-11-08T17:19:43Z",
+      "side": 1,
+      "message": "This is list very dated.",
+      "parentUuid": "fb8b4452_b5cc43d6",
+      "range": {
+        "startLine": 233,
+        "startChar": 4,
+        "endLine": 234,
+        "endChar": 22
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "303ea762_6ebad08d",
         "filename": "hima.mk",
         "patchSetId": 1
@@ -59,6 +107,30 @@
       "writtenOn": "2017-11-08T17:07:32Z",
       "side": 1,
       "message": "Is that a thing?",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 239,
+        "endChar": 31
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d09f0f70_b4623f07",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5530
+      },
+      "writtenOn": "2017-11-08T17:19:43Z",
+      "side": 1,
+      "message": "pretty sure nope",
+      "parentUuid": "303ea762_6ebad08d",
       "range": {
         "startLine": 239,
         "startChar": 4,
