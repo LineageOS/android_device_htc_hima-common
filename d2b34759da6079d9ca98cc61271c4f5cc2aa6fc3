@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1624188a_f1afef1f",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-08T17:07:32Z",
+      "side": 1,
+      "message": "Isn\u0027t this old and deprecated too?",
+      "range": {
+        "startLine": 227,
+        "startChar": 4,
+        "endLine": 227,
+        "endChar": 19
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb8b4452_b5cc43d6",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-08T17:07:32Z",
+      "side": 1,
+      "message": "Why SW encoders? Never seen anyone building those.",
+      "range": {
+        "startLine": 233,
+        "startChar": 4,
+        "endLine": 234,
+        "endChar": 22
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "303ea762_6ebad08d",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-11-08T17:07:32Z",
+      "side": 1,
+      "message": "Is that a thing?",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 239,
+        "endChar": 31
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
