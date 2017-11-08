@@ -140,6 +140,30 @@
       "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e77537d9_cafa731e",
+        "filename": "hima.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 5530
+      },
+      "writtenOn": "2017-11-08T18:24:54Z",
+      "side": 1,
+      "message": "https://source.codeaurora.org/quic/la/device/qcom/common/commit/?h\u003dLA.BF64.1.2.3_rb1.17\u0026id\u003d513a83a9f1e94ca1be2b017940c0b61389bd66e8",
+      "parentUuid": "d09f0f70_b4623f07",
+      "range": {
+        "startLine": 239,
+        "startChar": 4,
+        "endLine": 239,
+        "endChar": 31
+      },
+      "revId": "d2b34759da6079d9ca98cc61271c4f5cc2aa6fc3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
