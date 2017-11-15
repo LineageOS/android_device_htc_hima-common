@@ -98,10 +98,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.call_ring.multiple=false
 
-# SDCard FS
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sys.sdcardfs=false
-
 # Storage
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=true
