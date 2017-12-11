@@ -245,10 +245,10 @@
 /dev/shub_event       0660   system     system
 
 # set the owner of partition control's block node to media and system for MFG disable camera feature.
-/dev/block/bootdevice/by-name/control   0660    media   system
+/dev/block/platform/soc.0/f9824900.sdhci/by-name/control   0660    media   system
 
 #HTC Debug
-/dev/block/bootdevice/by-name/misc      0660    root    system
+/dev/block/platform/soc.0/f9824900.sdhci/by-name/misc      0660    root    system
 
 # Amplifiers
 /dev/rt5501                 0660        system  audio
@@ -256,7 +256,7 @@
 /dev/tfa9887l               0660        system  audio
 
 # FRP
-/dev/block/bootdevice/by-name/frp       0600    system  system
+/dev/block/platform/soc.0/f9824900.sdhci/by-name/frp       0600    system  system
 
 # NFC
 /dev/pn544                  0660        nfc     nfc
