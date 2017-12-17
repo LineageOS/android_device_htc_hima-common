@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- version: 20150407-fix-mixerpath-->
+<!-- version: 20151217 correct the initial value for RDAC5_MUX and RDAC7_MUX -->
 <mixer>
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
@@ -112,6 +112,7 @@
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia14" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia15" value="0" />
     <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia16" value="0" />
+    <ctl name="SLIMBUS_0_RX Port Mixer SEC_AUX_PCM_UL_TX" value="0" />
     <ctl name="MultiMedia6 Mixer SLIM_0_TX" value="0" />
     <ctl name="IIR1 INP1 MUX" value="ZERO" />
     <ctl name="SLIM0_RX_VI_FB_LCH_MUX" value="ZERO" />
@@ -388,6 +389,12 @@
     <ctl name="QUAT_MI2S_RX_DL_HL_FM Switch" value="0" />
     <ctl name="PRI_MI2S_TX_HL Switch" value="0" />
     <ctl name="Prim MI2S FM RX Volume" value="0" />
+    <ctl name="SLIMBUS_DL_COMPR_STUB Switch" value="0" />
+    <ctl name="QUAT_MI2S_DL_COMPR_STUB Switch" value="0" />
+    <ctl name="RDAC5 MUX" value="DEM4" />
+    <ctl name="RDAC7 MUX" value="DEM6" />
+    <ctl name="RX8 MIX1 INP1" value="ZERO" />
+    <ctl name="MultiMedia5 Mixer SEC_AUX_PCM_UL_TX" value="0" />
     <!-- htc ctrl end -->
 
     <!-- These are audio route (FE to BE) specific mixer settings -->
@@ -1057,6 +1064,10 @@
     </path>
 
     <path name="incall-rec-uplink-and-downlink bt-sco">
+        <path name="incall-rec-uplink-and-downlink" />
+    </path>
+
+    <path name="incall-rec-uplink-and-downlink afe-proxy">
         <path name="incall-rec-uplink-and-downlink" />
     </path>
 
