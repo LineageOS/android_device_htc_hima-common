@@ -2185,9 +2185,6 @@
         <ctl name="DEC5 Volume" value="84" />
     </path>
 
-    <path name="speaker">
-    </path>
-
     <path name="speaker-headset">
         <path name="headphones-generic" />
         <path name="speaker" />
