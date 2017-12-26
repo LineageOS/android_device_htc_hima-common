@@ -77,6 +77,7 @@ vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libaudcal.so
+vendor/lib/libhwdaphal.so
 vendor/lib/soundfx/libhwdap.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
@@ -85,6 +86,8 @@ vendor/lib/soundfx/libswdap.so
 
 # Bluetooth
 etc/firmware/BCM4356A2_001.003.015.0100.0102.hcd:etc/firmware/BCM4354A2_001.003.015.0100.0102.hcd
+vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so|db8a6d0ac2774ef4a5d82df7a3333708
+vendor/lib/libaptXScheduler.so|b6e128517b1544686ab67bae09411155
 
 # Camera
 bin/mm-qcamera-daemon
