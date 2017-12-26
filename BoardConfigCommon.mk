@@ -115,6 +115,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# Keymaster
+TARGET_PROVIDES_KEYMASTER := true
+
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
