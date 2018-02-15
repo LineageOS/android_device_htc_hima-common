@@ -142,6 +142,13 @@ BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# Shims
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/libHtcVteEngine.so|/system/vendor/lib/libshim_camera.so \
+    /system/vendor/lib64/libril.so|/system/vendor/lib64/libshim_ril.so \
+    /system/vendor/lib/libizat_core.so|/system/vendor/lib/libshim_gps.so \
+    /system/vendor/lib64/libizat_core.so|/system/vendor/lib64/libshim_gps.so
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
