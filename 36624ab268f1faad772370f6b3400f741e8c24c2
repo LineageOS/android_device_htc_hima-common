@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "de03266d_a69cde87",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-02-21T08:47:41Z",
+      "side": 1,
+      "message": "Also, this can be removed in a follow-up change. It seems that https://review.lineageos.org/#/c/194321/ is incomplete. All 32-bit GPS libs could have been removed (vendor/lib/*).",
+      "range": {
+        "startLine": 149,
+        "startChar": 4,
+        "endLine": 149,
+        "endChar": 55
+      },
+      "revId": "36624ab268f1faad772370f6b3400f741e8c24c2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
