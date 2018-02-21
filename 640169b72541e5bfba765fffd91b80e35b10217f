@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d127ba40_1d764bb8",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-02-21T08:08:50Z",
+      "side": 1,
+      "message": "You can drop this path on every shim and keep only the shim filename.",
+      "range": {
+        "startLine": 147,
+        "startChar": 42,
+        "endLine": 147,
+        "endChar": 61
+      },
+      "revId": "640169b72541e5bfba765fffd91b80e35b10217f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "db6921e7_6fb175a7",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-02-21T08:08:50Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 148,
+        "startChar": 35,
+        "endLine": 148,
+        "endChar": 56
+      },
+      "revId": "640169b72541e5bfba765fffd91b80e35b10217f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6434cee4_63797ceb",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-02-21T08:08:50Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 149,
+        "startChar": 39,
+        "endLine": 149,
+        "endChar": 58
+      },
+      "revId": "640169b72541e5bfba765fffd91b80e35b10217f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c7506048_b1d02736",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-02-21T08:08:50Z",
+      "side": 1,
+      "message": "...",
+      "range": {
+        "startLine": 150,
+        "startChar": 41,
+        "endLine": 150,
+        "endChar": 62
+      },
+      "revId": "640169b72541e5bfba765fffd91b80e35b10217f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
